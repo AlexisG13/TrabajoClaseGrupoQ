@@ -10,7 +10,19 @@ package mansionfoster;
  * @author rauli
  */
 public class Cliente {
-    Nombre nombre;
-    int DUI;
-    Reserva reserva;
+
+    private int DUI;
+
+    public Cliente(int DUI) {
+        this.DUI = DUI;
+    }
+
+    public void setDUI(int DUI) {
+        this.DUI = DUI;
+    }
+
+    public int getDUI() {
+        return DUI;
+    }
+    
 }

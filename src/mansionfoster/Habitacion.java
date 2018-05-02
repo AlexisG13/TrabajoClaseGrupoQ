@@ -5,8 +5,6 @@
  */
 package mansionfoster;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Karina Mina

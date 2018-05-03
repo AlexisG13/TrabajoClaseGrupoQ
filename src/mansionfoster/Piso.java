@@ -27,14 +27,14 @@ public class Piso {
     //}
     public static void add() {
         for (int j = 1; j < nPisos + 1; j++) {
-            System.out.println("Piso: " + j);
-            for (int i = 1; i < 11; i++) {
+            //System.out.println("Piso: " + j);
+            for (int i = 0; i < 10; i++) {
                 if (i % 2 == 0) {
-                    piso.add(new Habitacion(i,120, true));
+                    piso.add(new Habitacion(i+1,120, true));
                     //System.out.println("Habitacion doble #"+i);
                 }
                 if (i % 2 != 0) {
-                    piso.add(new Habitacion(i,100, true));
+                    piso.add(new Habitacion(i+1,100, true));
                     //System.out.println("Habitacion sencilla #"+i);
                 }
                 //Piso.mostrar();
@@ -45,8 +45,19 @@ public class Piso {
     }
 
     public static void mostrar() {
+        int numeroPiso=1;
+        int cont=1;
         for (Habitacion e : piso) {
+            if(cont == 10){
+                cont -= 10;
+            }
+            
+            if( cont == 1  ){
+                System.out.println("Piso #" + numeroPiso);
+                numeroPiso++;
+            }
             System.out.println(e.toString());
+            cont++;
         }
     }
 }

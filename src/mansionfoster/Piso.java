@@ -30,12 +30,19 @@ public class Piso {
                 if (i % 2 == 0) {
                     piso.add(i, new Habitacion(120, true));
                 }
-                if (i % 2 != 0){
+                if (i % 2 != 0) {
                     piso.add(i, new Habitacion(100, true));
                 }
             }
 
         }
     }
-
+ public void mostrar() {
+        for (Habitacion e : piso) {
+            System.out.println(e.toString());
+        }
+    }
 }
+    
+   
+    

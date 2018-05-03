@@ -13,8 +13,8 @@ import java.util.ArrayList;
  */
 public class Piso {
 
-    public int nPisos = 10;
-    public ArrayList<Habitacion> piso = new ArrayList<>();
+    public static int nPisos = 10;
+    public static ArrayList<Habitacion> piso = new ArrayList<>();
 
     public Piso() {
     }
@@ -23,7 +23,7 @@ public class Piso {
         this.piso = piso;
     }
 
-    public void add() {
+    public static void add() {
         for (int j = 0; j < nPisos; j++) {
 
             for (int i = 0; i < 10; i++) {
@@ -37,7 +37,7 @@ public class Piso {
 
         }
     }
- public void mostrar() {
+ public static void mostrar() {
         for (Habitacion e : piso) {
             System.out.println(e.toString());
         }

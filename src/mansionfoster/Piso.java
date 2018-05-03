@@ -14,39 +14,39 @@ import java.util.ArrayList;
 public class Piso {
 
     public static int nPisos = 6;
-    public static ArrayList<Habitacion> piso = new ArrayList<>();;
+    public static ArrayList<Habitacion> piso = new ArrayList<>();
+
+    ;
 
     public Piso() {
-        
+
     }
 
     //public void setHabitacion(ArrayList<Habitacion> habitacion) {
-      //  this.piso = piso;
+    //  this.piso = piso;
     //}
-
     public static void add() {
-        for (int j = 1; j < nPisos+1 ; j++) {
-            System.out.println("Piso: "+ j);
+        for (int j = 1; j < nPisos + 1; j++) {
+            System.out.println("Piso: " + j);
             for (int i = 1; i < 11; i++) {
                 if (i % 2 == 0) {
-                    piso.add(new Habitacion(120,true)); 
-                    System.out.println("Habitacion doble #"+i);
+                    piso.add(new Habitacion(i,120, true));
+                    //System.out.println("Habitacion doble #"+i);
                 }
                 if (i % 2 != 0) {
-                    piso.add(new Habitacion(100, true));
-                    System.out.println("Habitacion sencilla #"+i);
+                    piso.add(new Habitacion(i,100, true));
+                    //System.out.println("Habitacion sencilla #"+i);
                 }
+                //Piso.mostrar();
             }
-
+            
+            //Piso.mostrar();
         }
     }
 
- public static void mostrar() {
+    public static void mostrar() {
         for (Habitacion e : piso) {
             System.out.println(e.toString());
         }
     }
 }
-    
-   
-    

@@ -13,11 +13,14 @@ public class Habitacion extends Piso {
     private float costoNoche;
     private boolean estado;
 
-    public Habitacion(float costoNoche, boolean estado) {
+    public  Habitacion(float costoNoche, boolean estado) {
         this.costoNoche = costoNoche;
         this.estado = estado;
     }
-
+  @Override
+    public String toString() {
+        return "Habitacion estado:" + estado + ", costo por Noche=" + costoNoche ;
+    }
     public float getCostoNoche() {
         return costoNoche;
     }

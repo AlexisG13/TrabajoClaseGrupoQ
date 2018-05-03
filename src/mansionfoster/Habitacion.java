@@ -22,7 +22,7 @@ public class Habitacion extends Piso {
     }
   @Override
     public String toString() {
-        return "Habitacion estado:" + estado + ", costo por Noche=" + costoNoche+ ", identificador "+ identificador;
+        return "Habitacion estado:" + estado + ", costo por Noche = " + costoNoche+ ", identificador "+ identificador;
     }
     public float getCostoNoche() {
         return costoNoche;

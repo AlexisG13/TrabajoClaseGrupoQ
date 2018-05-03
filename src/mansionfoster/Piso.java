@@ -6,6 +6,7 @@
 package mansionfoster;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -56,6 +57,19 @@ public class Piso {
             }
             System.out.println(e.toString());
             cont++;
+        }
+    }
+    public static void cambiarEstadoHabitacion(){
+        System.out.println("Que habitacion quiere");
+        Scanner sc = new Scanner(System.in);
+        int numHab= sc.nextInt();
+        int estado=0;
+        System.out.println("Estado habilitado 1, deshablitado 0");
+        estado= sc.nextInt();
+        if(estado==1){
+            piso.get(numHab+1).setEstado(true);
+        }else{ 
+            piso.get(numHab+1).setEstado(false);
         }
     }
 }

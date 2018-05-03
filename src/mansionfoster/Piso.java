@@ -25,16 +25,16 @@ public class Piso {
     //public void setHabitacion(ArrayList<Habitacion> habitacion) {
     //  this.piso = piso;
     //}
-    public static void add() {
+    public static void AgregaPiso() {
         for (int j = 1; j < nPisos + 1; j++) {
             //System.out.println("Piso: " + j);
             for (int i = 0; i < 10; i++) {
                 if (i % 2 == 0) {
-                    piso.add(new Habitacion(i + 1, 120, true));
+                    piso.add(new Habitacion(i + 1, 100, true));
                     //System.out.println("Habitacion doble #"+i);
                 }
                 if (i % 2 != 0) {
-                    piso.add(new Habitacion(i + 1, 100, true));
+                    piso.add(new Habitacion(i + 1, 120, true));
                     //System.out.println("Habitacion sencilla #"+i);
                 }
             }

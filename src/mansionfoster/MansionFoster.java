@@ -16,8 +16,10 @@ public class MansionFoster {
      */
     public static void main(String[] args) {
         Piso habitacion = new Piso();
-        Piso.add();
+        
+        Piso.AgregaPiso();
         Piso.mostrar();
+        
        
     }
     // TODO code application logic here

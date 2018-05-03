@@ -30,29 +30,25 @@ public class Piso {
             //System.out.println("Piso: " + j);
             for (int i = 0; i < 10; i++) {
                 if (i % 2 == 0) {
-                    piso.add(new Habitacion(i+1,120, true));
+                    piso.add(new Habitacion(i + 1, 120, true));
                     //System.out.println("Habitacion doble #"+i);
                 }
                 if (i % 2 != 0) {
-                    piso.add(new Habitacion(i+1,100, true));
+                    piso.add(new Habitacion(i + 1, 100, true));
                     //System.out.println("Habitacion sencilla #"+i);
                 }
-                //Piso.mostrar();
             }
-            
-            //Piso.mostrar();
         }
     }
 
     public static void mostrar() {
-        int numeroPiso=1;
-        int cont=1;
+        int numeroPiso = 1;
+        int cont = 1;
         for (Habitacion e : piso) {
-            if(cont == 10){
+            if (cont == 10) {
                 cont -= 10;
             }
-            
-            if( cont == 1  ){
+            if (cont == 1) {
                 System.out.println("Piso #" + numeroPiso);
                 numeroPiso++;
             }

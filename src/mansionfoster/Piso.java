@@ -49,7 +49,7 @@ public class Piso {
                 cont -= 10;
             }
             if (cont == 1) {
-                System.out.println("Piso #" + numeroPiso);
+                System.out.println("-----------Piso #" + numeroPiso+"------------");
                 numeroPiso++;
             }
             System.out.println(e.toString());

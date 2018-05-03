@@ -9,10 +9,10 @@ package mansionfoster;
  *
  * @author Alexis Gomez
  */
-public class Paquete {
+public class Paquete extends ListaPaquetes {
 //Servicios que pueden contener los paquetes
 
-    public String nombre;
+    private String nombre;
     public boolean desayuno;
     public boolean piscina;
     public boolean servicioHab;
@@ -28,26 +28,15 @@ public class Paquete {
         this.minibar = minibar;
         this.internet = internet;
     }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-//Métodos 
-    private void EscogePaquete() {
-
-    }
-
-    private void AgregarPaquete() {
-
-    }
-
-    private void ModPaquete() {
-
-    }
-
+    @Override 
+        public String toString(){
+            return "Paquete "+ nombre;
+        }
+        public String getNombre(){
+            return nombre;
+        }
+    
+    
+    
+    
 }

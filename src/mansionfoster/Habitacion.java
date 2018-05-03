@@ -12,14 +12,17 @@ package mansionfoster;
 public class Habitacion extends Piso {
     private float costoNoche;
     private boolean estado;
+    private int identificador;
 
-    public  Habitacion(float costoNoche, boolean estado) {
+    public  Habitacion(int identificador,float costoNoche, boolean estado) {
+        this.identificador = identificador;
         this.costoNoche = costoNoche;
         this.estado = estado;
+        
     }
   @Override
     public String toString() {
-        return "Habitacion estado:" + estado + ", costo por Noche=" + costoNoche ;
+        return "Habitacion estado:" + estado + ", costo por Noche=" + costoNoche+ ", identificador "+ identificador;
     }
     public float getCostoNoche() {
         return costoNoche;

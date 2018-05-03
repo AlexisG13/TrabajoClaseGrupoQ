@@ -11,7 +11,7 @@ package mansionfoster;
  */
 public class Habitacion extends Piso {
     private float costoNoche;
-    private boolean estado;
+    private boolean estado = true;
     private char letraPiso;
     private int numHab;
 

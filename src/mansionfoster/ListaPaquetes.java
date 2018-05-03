@@ -13,14 +13,12 @@ import java.util.ArrayList;
 public class ListaPaquetes {
     public static ArrayList<Paquete> Packs = new ArrayList<>();
     
-    
     ListaPaquetes(){
-        Packs.add(new Paquete("Premium"));
+        Packs.add(new Paquete("Premium",true,true,true,true,true));
+        Packs.add(new Paquete("Básico",false,true,false,false,true));
     }
     
-    public void MostrarPacks(ArrayList<Paquete> n){
-        System.out.println(n);
-    }
+    
     
     
 }

@@ -29,7 +29,7 @@ public class Default {
     public void Menu() {
         int opcion = 6;
         Scanner leer = new Scanner(System.in);
-
+        Piso.AgregaPiso();
         while (opcion != 5) {
             opciones();
             try {

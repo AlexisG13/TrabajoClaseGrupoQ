@@ -5,23 +5,59 @@
  */
 package mansionfoster;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 /**
  *
  * @author Karina Mina
  */
 public class Default {
-
-    public Reserva reserva;
-
+    
+    
     public Default() {
     }
-
-    public Reserva getReserva() {
-        return reserva;
+    
+    public void opciones() {
+        System.out.println("******** SISTEMA DEFAULT ********");
+        System.out.println("1. Ver reservas semanales");
+        System.out.println("2. Agregar reserva");
+        System.out.println("3. Cancelar reserva");
+        System.out.println("4. Modificar reserva");
+        System.out.println("5. Salir");
     }
+   
+    public void Menu() {
+        int opcion = 6;
+        Scanner leer = new Scanner(System.in);
 
-    public void setReserva(Reserva reserva) {
-        this.reserva = reserva;
+        while (opcion != 5) {
+            try {
+                opcion = leer.nextInt();
+                switch (opcion) {
+                    case 1: //Ver reservas
+                        
+                        break;
+                    case 2: //Agregar reserva
+                        
+                        Piso.mostrar();
+                        break;
+                    case 3: //Cancelar reserva
+                        
+                        break;
+                    case 4: //Modificar reserva
+                        break;
+                    case 5:
+                        System.out.println("Adios, Rafael");
+                        break;
+                    default:
+                        System.out.println("Por favor ingrese una opcion valida");
+                }
+            } catch (InputMismatchException e) {
+                System.err.println("Por favor, ingerese un número");
+                leer.nextLine();
+            }
+        }
     }
     
     public void verReservas(){

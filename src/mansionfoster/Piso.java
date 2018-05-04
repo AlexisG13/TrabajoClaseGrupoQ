@@ -27,7 +27,7 @@ public class Piso {
     //  this.piso = piso;
     //}
     public static void AgregaPiso() {
-        char p =65;
+        char p = 65;
         for (int j = 1; j < nPisos + 1; j++) {
             //System.out.println("Piso: " + j);
             for (int i = 0; i < 10; i++) {
@@ -40,7 +40,7 @@ public class Piso {
                     //System.out.println("Habitacion sencilla #"+i);
                 }
             }
-            p+=1;
+            p += 1;
         }
     }
 
@@ -52,34 +52,50 @@ public class Piso {
                 cont -= 10;
             }
             if (cont == 1) {
-                System.out.println("-----------Piso #" + numeroPiso+"------------");
+                System.out.println("-----------Piso #" + numeroPiso + "------------");
                 numeroPiso++;
             }
             System.out.println(e.toString());
             cont++;
         }
     }
-    public static void cambiarEstadoHabitacion(){
-        System.out.println("Que habitacion quiere");
+//Habitacion(char letraPiso, int numHab,float costoNoche, boolean estado)
+
+    public static void cambiarEstadoHabitacion() {
+        int estado = 0;
+        System.out.println("Que habitacion quiere: ");
         Scanner sc = new Scanner(System.in);
-        int numHab= sc.nextInt();
-        int estado=0;
+        int numHab = sc.nextInt();
+        System.out.println("Ingrese el piso(formato abc): ");
+        Scanner ch = new Scanner(System.in);
+        char habitacion = ch.next().charAt(0);
+        //habitacion = ch.next().charAt(0);
         System.out.println("Estado habilitado 1, deshablitado 0");
-        estado= sc.nextInt();
-        if(estado==1){
-            piso.get(numHab).setEstado(true);
-        }else{ 
-            piso.get(numHab).setEstado(false);
+        estado = sc.nextInt();
+
+        for (int j = 1; j < nPisos; j++) {
+            if (habitacion == nPisos) {
+                for (int h = 0; h < 10; h++) {
+                    if (estado == 1) {
+                        //piso.get(habitacion);
+                        piso.get(numHab).setEstado(true);
+
+                    } else {
+                        piso.get(numHab).setEstado(false);
+
+                    }
+                }
+            }
         }
     }
-    
-    public static void cambiarPrecioHabitacion(){
+
+    public static void cambiarPrecioHabitacion() {
         System.out.println("Que habitacion quiere");
         Scanner sc = new Scanner(System.in);
-        int numHabi= sc.nextInt();
+        int numHabi = sc.nextInt();
         System.out.println("Cual es el nuevo valor");
         int nuevoValor = sc.nextInt();
         piso.get(numHabi).setCostoNoche(nuevoValor);
-        
+
     }
 }

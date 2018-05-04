@@ -54,5 +54,7 @@ public class Reserva {
         this.checkIn = checkIn;
     }
     
-    
+    public void NumDia(Check checkIn, Check checkOut){
+        
+    }
 }

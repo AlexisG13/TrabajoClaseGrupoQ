@@ -22,8 +22,8 @@ public class MansionFoster {
         System.out.println(": ");
     }
     public static void main(String[] args) {
-        //Default default = new Default();
-        //Admin admin = new Admmin();
+        Default def = new Default();
+        Admin admin = new Admin();
         
         int opcion = 4;
         Scanner leer = new Scanner(System.in);
@@ -34,14 +34,14 @@ public class MansionFoster {
                 opcion = leer.nextInt();
                 switch (opcion) {
                     case 1: //Sistema Default
-          //              default.Menu();
+                        def.Menu();
                         break;
                     case 2: //Sistema Administrativo
-          //              admin.Menu();
+                        admin.Menu();
                         break;
                     case 3:
                         System.out.println("Adios, Rafael");
-                        break;
+                        bre1ak;
                     default:
                         System.out.println("Por favor ingrese una opcion valida");
                 }

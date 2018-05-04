@@ -60,12 +60,13 @@ public class ListaPaquetes {
         MostrarPacks();
         Scanner scan = new Scanner(System.in);
         int p = scan.nextInt();
-        System.out.println("Paquete: "+Packs.get(p-1).getNombre()+"\n Servicios:");
-        System.out.println("Desayno "+Packs.get(p-1).desayuno);
-        System.out.println("Piscina "+Packs.get(p-1).piscina);
-        System.out.println("Servicio a la habitación "+Packs.get(p-1).servicioHab);
-        System.out.println("Internet "+Packs.get(p-1).internet);
-        System.out.println("Minibar "+Packs.get(p-1).minibar);
+        System.out.println("Paquete: "+Packs.get(p-1).getNombre());
+        System.out.println("Precio: "+Packs.get(p-1).precio+"\nServicios:");
+        System.out.println("Desayuno: "+Packs.get(p-1).desayuno);
+        System.out.println("Piscina: "+Packs.get(p-1).piscina);
+        System.out.println("Servicio a la habitación: "+Packs.get(p-1).servicioHab);
+        System.out.println("Internet: "+Packs.get(p-1).internet);
+        System.out.println("Minibar: "+Packs.get(p-1).minibar);
     }
     
     public static void ModificarPack(){
@@ -73,10 +74,23 @@ public class ListaPaquetes {
         MostrarPacks();
         Scanner scan= new Scanner(System.in);
         int s = scan.nextInt();
-        System.out.println("¿Que nombre desea que tenga?");
-        Scanner lil = new Scanner(System.in);
-        String e = scan.next();             
-        Packs.get(s-1).setNombre(e);
+        System.out.println("Nombre del paquete");
+        String o = scan.next();
+        System.out.println("Precio del paquete");
+        int pipo = scan.nextInt();
+        System.out.println("¿Que servicios incluira el paquete?(Indiquelo"
+                + " usando true o false)\n");
+        System.out.println("¿Desayuno?");
+        boolean des = scan.nextBoolean();
+        System.out.println("¿Piscina?");
+        boolean pis = scan.nextBoolean();
+        System.out.println("¿Servicio a la habitación?");
+        boolean hab = scan.nextBoolean();
+        System.out.println("¿Minibar?");
+        boolean min = scan.nextBoolean();
+        System.out.println("¿Internet ilimitado?");
+        boolean inter = scan.nextBoolean();
+        Packs.set((s-1),new Paquete(o,des,true,true,true,true,pipo));             
     }
     
     

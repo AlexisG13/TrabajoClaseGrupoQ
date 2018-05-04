@@ -18,15 +18,18 @@ public class Paquete extends ListaPaquetes {
     public boolean servicioHab;
     public boolean minibar;
     public boolean internet;
+    public int precio;
 
     public Paquete(String nombre, boolean desayuno, boolean piscina,
-            boolean servicioHab, boolean minibar, boolean internet) {
+            boolean servicioHab, boolean minibar, boolean internet,int precio) {
         this.nombre = nombre;
+        
         this.desayuno = desayuno;
         this.piscina = piscina;
         this.servicioHab = servicioHab;
         this.minibar = minibar;
         this.internet = internet;
+        this.precio = precio;
     }
     @Override 
         public String toString(){
@@ -38,8 +41,18 @@ public class Paquete extends ListaPaquetes {
         public void setNombre(String nombre){
             this.nombre=nombre;
         }
-    
-    
+        public boolean getDesayuno(){
+            return desayuno;
+        }
+        public void setDesayuno(boolean desayuno){
+            this.desayuno=desayuno;
+        }
+        public boolean getPiscina(){
+            return piscina;
+        }
+        public void setPiscina(boolean piscina){
+            this.piscina=piscina;
+        }
     
     
 }

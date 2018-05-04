@@ -19,7 +19,11 @@ public class MansionFoster {
         
         Piso.AgregaPiso();
         Piso.mostrar();
-        
+        Piso.cambiarEstadoHabitacion();
+        Piso.mostrar();
+        Piso.cambiarPrecioHabitacion();
+        Piso.mostrar();
+                
        
     }
     // TODO code application logic here

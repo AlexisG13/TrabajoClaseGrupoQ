@@ -13,18 +13,19 @@ import java.util.Scanner;
  * @author Alexis Gomez
  */
 public class MansionFoster {
-      
-    public static void opciones(){
-        System.out.println("******* Bienvenido Rafael *******");
+
+    public static void opciones() {
+        System.out.println("*************** MENÚ PRINCIPAL ***************");
         System.out.println("1. Sistema Default");
         System.out.println("2. Sistema Administrativo");
         System.out.println("3. Salir");
-        System.out.println(": ");
+        System.out.print(": ");
     }
+
     public static void main(String[] args) {
         Default def = new Default();
         Admin admin = new Admin();
-        
+
         int opcion = 4;
         Scanner leer = new Scanner(System.in);
 
@@ -37,16 +38,16 @@ public class MansionFoster {
                         def.Menu();
                         break;
                     case 2: //Sistema Administrativo
-                        admin.Menu();
+                        admin.login();
                         break;
                     case 3:
-                        System.out.println("Adios, Rafael");
+                        System.out.println("    Que tenga un buen día..");
                         break;
                     default:
-                        System.out.println("Por favor ingrese una opcion valida");
+                        System.out.println("    Por favor ingrese una opción valida");
                 }
             } catch (InputMismatchException e) {
-                System.err.println("Por favor, ingerese un número");
+                System.err.println("    Por favor, ingrese un número");
                 leer.nextLine();
             }
         }

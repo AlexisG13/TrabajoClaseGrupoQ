@@ -42,6 +42,17 @@ public class ListaPaquetes {
         
     }
     
+    public static void ModificarPack(){
+        System.out.println("Elija el número del paquete a modificar");
+        MostrarPacks();
+        Scanner scan= new Scanner(System.in);
+        int s = scan.nextInt();
+        System.out.println("¿Que nombre desea que tenga?");
+        Scanner lil = new Scanner(System.in);
+        String e = scan.next();
+        Packs.get(s-1).setNombre(e);
+    }
+    
     
     
 }

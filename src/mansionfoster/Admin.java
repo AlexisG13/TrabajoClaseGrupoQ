@@ -55,7 +55,8 @@ public class Admin {
         System.out.println("1. Ver paquetes");
         System.out.println("2. Agregar paquete");
         System.out.println("3. Borrar paquete");
-        System.out.println("4. Modificar precio");
+        System.out.println("4. Modificar nombre");
+        System.out.println("5. Regresar al menu");
     }
     public void Menu() {
         //Piso habitacion = new Piso();
@@ -93,12 +94,16 @@ public class Admin {
                                         ListaPaquetes.MostrarPacks();
                                         break;
                                     case 2:
+                                        ListaPaquetes.AgregarPack();
                                         break;
                                     case 3:
+                                        ListaPaquetes.BorrarPack();
                                         break;
                                     case 4:
+                                        ListaPaquetes.ModificarPack();
                                         break;
                                     case 5:
+                                        System.out.println("Regresando al menu");
                                         break;
                                     default:
                                         System.out.println("Ingresa una opcion valida");

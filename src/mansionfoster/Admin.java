@@ -50,9 +50,19 @@ public class Admin {
         System.out.println("5. Salir");
     }
 
+    public void menuPaquetes(){
+        System.out.println("¿Que desea realizar?");
+        System.out.println("1. Ver paquetes");
+        System.out.println("2. Agregar paquete");
+        System.out.println("3. Borrar paquete");
+        System.out.println("4. Modificar precio");
+    }
     public void Menu() {
         //Piso habitacion = new Piso();
+        ListaPaquetes Packs = new ListaPaquetes();
+        ListaPaquetes.IniciarPacks();
         int opcion = 6;
+        int opcion2 =6;
         Scanner leer = new Scanner(System.in);
 
         while (opcion != 5) {
@@ -73,7 +83,32 @@ public class Admin {
           //              Piso.mostrar();
                         break;
                     case 4: //Modificar Paquetes
-                        break;
+                        Scanner pepe = new Scanner(System.in);
+                        while(opcion2 !=5){
+                            menuPaquetes();
+                            try{
+                                opcion2 =pepe.nextInt();
+                                switch(opcion2){
+                                    case 1:
+                                        ListaPaquetes.MostrarPacks();
+                                        break;
+                                    case 2:
+                                        break;
+                                    case 3:
+                                        break;
+                                    case 4:
+                                        break;
+                                    case 5:
+                                        break;
+                                    default:
+                                        System.out.println("Ingresa una opcion valida");
+                                }
+                            }
+                            catch (InputMismatchException e) {
+                                System.err.println("Por favor, ingrese un número");
+                                pepe.nextLine();
+                            }
+                        }
                     case 5:
                         System.out.println("Adios, Rafael");
                         break;

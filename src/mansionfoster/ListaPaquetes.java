@@ -29,11 +29,12 @@ public class ListaPaquetes {
         System.out.println("Nombre del paquete");
         Scanner scan = new Scanner(System.in);
         String s = scan.next();
+        System.out.println("¿Que servicios incluira el paquete?\n");
         Packs.add(new Paquete(s,true,true,true,true,true));
     }
     
-    public static void ModificarPack(){
-        System.out.println("Elija el número del paquete a modificar");
+    public static void BorrarPack(){
+        System.out.println("Elija el número del paquete a borrar");
         MostrarPacks();
         Scanner scan = new Scanner(System.in);
         int s = scan.nextInt();
@@ -41,9 +42,6 @@ public class ListaPaquetes {
         
     }
     
-    public static void Hacete(){
-        IniciarPacks();
-        MostrarPacks();
-    }
+    
     
 }

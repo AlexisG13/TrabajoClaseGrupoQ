@@ -41,7 +41,7 @@ public class MansionFoster {
                         break;
                     case 3:
                         System.out.println("Adios, Rafael");
-                        bre1ak;
+                        break;
                     default:
                         System.out.println("Por favor ingrese una opcion valida");
                 }

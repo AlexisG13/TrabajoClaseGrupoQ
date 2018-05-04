@@ -15,8 +15,8 @@ public class ListaPaquetes {
     public static ArrayList<Paquete> Packs = new ArrayList<>();
     public ListaPaquetes(){};
     public static void IniciarPacks(){
-        Packs.add(new Paquete("Premium",true,true,true,true,true));
-        Packs.add(new Paquete("Básico",false,true,false,false,true));
+        Packs.add(new Paquete("Premium",true,true,true,true,true,150));
+        Packs.add(new Paquete("Básico",false,true,false,false,true,10));
     }
     public static void MostrarPacks(){
         int i=1;
@@ -29,8 +29,21 @@ public class ListaPaquetes {
         System.out.println("Nombre del paquete");
         Scanner scan = new Scanner(System.in);
         String s = scan.next();
-        System.out.println("¿Que servicios incluira el paquete?\n");
-        Packs.add(new Paquete(s,true,true,true,true,true));
+        System.out.println("Precio del paquete");
+        int pipo = scan.nextInt();
+        System.out.println("¿Que servicios incluira el paquete?(Indiquelo"
+                + " usando true o false)\n");
+        System.out.println("¿Desayuno?");
+        boolean des = scan.nextBoolean();
+        System.out.println("¿Piscina?");
+        boolean pis = scan.nextBoolean();
+        System.out.println("¿Servicio a la habitación?");
+        boolean hab = scan.nextBoolean();
+        System.out.println("¿Minibar?");
+        boolean min = scan.nextBoolean();
+        System.out.println("¿Internet ilimitado?");
+        boolean inter = scan.nextBoolean();
+        Packs.add(new Paquete(s,des,true,true,true,true,pipo));
     }
     
     public static void BorrarPack(){
@@ -42,6 +55,19 @@ public class ListaPaquetes {
         
     }
     
+    public static void VerServicios(){
+        System.out.println("Elija el paquete a ver");
+        MostrarPacks();
+        Scanner scan = new Scanner(System.in);
+        int p = scan.nextInt();
+        System.out.println("Paquete: "+Packs.get(p-1).getNombre()+"\n Servicios:");
+        System.out.println("Desayno "+Packs.get(p-1).desayuno);
+        System.out.println("Piscina "+Packs.get(p-1).piscina);
+        System.out.println("Servicio a la habitación "+Packs.get(p-1).servicioHab);
+        System.out.println("Internet "+Packs.get(p-1).internet);
+        System.out.println("Minibar "+Packs.get(p-1).minibar);
+    }
+    
     public static void ModificarPack(){
         System.out.println("Elija el número del paquete a modificar");
         MostrarPacks();
@@ -49,7 +75,7 @@ public class ListaPaquetes {
         int s = scan.nextInt();
         System.out.println("¿Que nombre desea que tenga?");
         Scanner lil = new Scanner(System.in);
-        String e = scan.next();
+        String e = scan.next();             
         Packs.get(s-1).setNombre(e);
     }
     

@@ -56,14 +56,15 @@ public class Admin {
         System.out.println("2. Agregar paquete");
         System.out.println("3. Borrar paquete");
         System.out.println("4. Modificar nombre");
-        System.out.println("5. Regresar al menu");
+        System.out.println("5. Ver servicios del paquete");
+        System.out.println("6. Regresar al menu");
     }
     public void Menu() {
         //Piso habitacion = new Piso();
         ListaPaquetes Packs = new ListaPaquetes();
         ListaPaquetes.IniciarPacks();
         int opcion = 6;
-        int opcion2 =6;
+        int opcion2 =7;
         Scanner leer = new Scanner(System.in);
 
         while (opcion != 5) {
@@ -85,7 +86,7 @@ public class Admin {
                         break;
                     case 4: //Modificar Paquetes
                         Scanner pepe = new Scanner(System.in);
-                        while(opcion2 !=5){
+                        while(opcion2 !=6){
                             menuPaquetes();
                             try{
                                 opcion2 =pepe.nextInt();
@@ -102,8 +103,11 @@ public class Admin {
                                     case 4:
                                         ListaPaquetes.ModificarPack();
                                         break;
-                                    case 5:
+                                    case 6:
                                         System.out.println("Regresando al menu");
+                                        break;
+                                    case 5:
+                                        ListaPaquetes.VerServicios();
                                         break;
                                     default:
                                         System.out.println("Ingresa una opcion valida");

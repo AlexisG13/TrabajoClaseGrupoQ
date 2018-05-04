@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class MansionFoster {
       
-    public void opciones(){
+    public static void opciones(){
         System.out.println("******* Bienvenido Rafael *******");
         System.out.println("1. Sistema Default");
         System.out.println("2. Sistema Administrativo");
@@ -22,21 +22,22 @@ public class MansionFoster {
         System.out.println(": ");
     }
     public static void main(String[] args) {
-        Default default = new Default();
-        Admin admin = new Admmin();
+        //Default default = new Default();
+        //Admin admin = new Admmin();
         
         int opcion = 4;
         Scanner leer = new Scanner(System.in);
 
         while (opcion != 3) {
+            opciones();
             try {
                 opcion = leer.nextInt();
                 switch (opcion) {
                     case 1: //Sistema Default
-                        default.Menu();
+          //              default.Menu();
                         break;
                     case 2: //Sistema Administrativo
-                        admin.Menu();
+          //              admin.Menu();
                         break;
                     case 3:
                         System.out.println("Adios, Rafael");

@@ -60,6 +60,14 @@ public class Admin {
         System.out.println("6. Regresar al menu");
     }
     public void Menu() {
+        String user="Rafa";
+        String pass="admin";
+        Scanner log = new Scanner(System.in);
+        System.out.println("Ingrese el usuario");
+        String us = log.next();
+        System.out.println("Ingrese la contraseña");
+        String pas = log.next();
+        if(user.equals(us)==true&&pass.equals(pas)==true){
         //Piso habitacion = new Piso();
         ListaPaquetes Packs = new ListaPaquetes();
         ListaPaquetes.IniciarPacks();
@@ -130,4 +138,9 @@ public class Admin {
             }
         }
     }
+        else{
+            System.out.println("Usuario o contraseña incorrecta");
+        }
+}
+    
 }

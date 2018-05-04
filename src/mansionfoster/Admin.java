@@ -17,6 +17,10 @@ public class Admin {
     public String username;
     private String password;
 
+    public Admin (){
+        
+    }
+    
     public Admin(String username) {
         this.username = username;
     }
@@ -47,25 +51,26 @@ public class Admin {
     }
 
     public void Menu() {
-        Piso habitacion = new Piso();
+        //Piso habitacion = new Piso();
         int opcion = 6;
         Scanner leer = new Scanner(System.in);
 
         while (opcion != 5) {
+            opciones();
             try {
                 opcion = leer.nextInt();
                 switch (opcion) {
                     case 1: //Des/Habilitar Habitacion 
-                        Piso.cambiarEstadoHabitacion();
-                        Piso.mostrar();
+          //              Piso.cambiarEstadoHabitacion();
+          //            Piso.mostrar();
                         break;
                     case 2: //Des/Habilitar Piso
-                        Piso.AgregaPiso();
-                        Piso.mostrar();
+          //              Piso.AgregaPiso();
+          //              Piso.mostrar();
                         break;
                     case 3: //Modificar Precios
-                        Piso.cambiarPrecioHabitacion();
-                        Piso.mostrar();
+          //              Piso.cambiarPrecioHabitacion();
+          //              Piso.mostrar();
                         break;
                     case 4: //Modificar Paquetes
                         break;

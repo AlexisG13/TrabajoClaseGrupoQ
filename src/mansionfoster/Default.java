@@ -14,7 +14,6 @@ import java.util.Scanner;
  */
 public class Default {
     
-    
     public Default() {
     }
     
@@ -32,15 +31,16 @@ public class Default {
         Scanner leer = new Scanner(System.in);
 
         while (opcion != 5) {
+            opciones();
             try {
                 opcion = leer.nextInt();
                 switch (opcion) {
                     case 1: //Ver reservas
-                        
+                                                
                         break;
                     case 2: //Agregar reserva
-                        
-                        Piso.mostrar();
+                        Reserva reserva = new Reserva();
+                        reserva.Reservar();
                         break;
                     case 3: //Cancelar reserva
                         
@@ -59,17 +59,4 @@ public class Default {
             }
         }
     }
-    
-    public void verReservas(){
-        
-    }
-    
-    public void agregarReservas(){
-        
-    }
-    
-    public void modReserva(){
-        
-    }
-
 }

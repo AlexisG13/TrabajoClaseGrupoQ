@@ -67,9 +67,19 @@ public class Piso {
         System.out.println("Estado habilitado 1, deshablitado 0");
         estado= sc.nextInt();
         if(estado==1){
-            piso.get(numHab+1).setEstado(true);
+            piso.get(numHab).setEstado(true);
         }else{ 
-            piso.get(numHab+1).setEstado(false);
+            piso.get(numHab).setEstado(false);
         }
+    }
+    
+    public static void cambiarPrecioHabitacion(){
+        System.out.println("Que habitacion quiere");
+        Scanner sc = new Scanner(System.in);
+        int numHabi= sc.nextInt();
+        System.out.println("Cual es el nuevo valor");
+        int nuevoValor = sc.nextInt();
+        piso.get(numHabi).setCostoNoche(nuevoValor);
+        
     }
 }

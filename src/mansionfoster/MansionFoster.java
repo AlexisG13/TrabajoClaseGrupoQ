@@ -5,27 +5,49 @@
  */
 package mansionfoster;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 /**
  *
  * @author Alexis Gomez
  */
 public class MansionFoster {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Piso habitacion = new Piso();
-        
-        Piso.AgregaPiso();
-        Piso.mostrar();
-        Piso.cambiarEstadoHabitacion();
-        Piso.mostrar();
-        Piso.cambiarPrecioHabitacion();
-        Piso.mostrar();
-                
-       
+      
+    public void opciones(){
+        System.out.println("******* Bienvenido Rafael *******");
+        System.out.println("1. Sistema Default");
+        System.out.println("2. Sistema Administrativo");
+        System.out.println("3. Salir");
+        System.out.println(": ");
     }
-    // TODO code application logic here
-}
+    public static void main(String[] args) {
+        Default default = new Default();
+        Admin admin = new Admmin();
+        
+        int opcion = 4;
+        Scanner leer = new Scanner(System.in);
 
+        while (opcion != 3) {
+            try {
+                opcion = leer.nextInt();
+                switch (opcion) {
+                    case 1: //Sistema Default
+                        default.Menu();
+                        break;
+                    case 2: //Sistema Administrativo
+                        admin.Menu();
+                        break;
+                    case 3:
+                        System.out.println("Adios, Rafael");
+                        break;
+                    default:
+                        System.out.println("Por favor ingrese una opcion valida");
+                }
+            } catch (InputMismatchException e) {
+                System.err.println("Por favor, ingerese un número");
+                leer.nextLine();
+            }
+        }
+    }
+}

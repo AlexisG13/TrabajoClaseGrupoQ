@@ -93,6 +93,22 @@ public class ListaPaquetes {
         Packs.set((s-1),new Paquete(o,des,true,true,true,true,pipo));             
     }
     
-    
+    public static void obtenerPrecioPack(){
+        
+     System.out.println("Que paquete quiere");
+        Scanner sc = new Scanner(System.in);
+        String pack = sc.nextLine();
+        if(pack.equals("premiun")){
+         int precio = Packs.get(0).precio;
+         System.out.println(precio);
+        }
+        if(pack.equals("basico")){
+            int precio = Packs.get(1).precio;
+         System.out.println(precio);
+            
+        }
+        
+        
+    }
     
 }

@@ -6,6 +6,8 @@
 package mansionfoster;
 
 import java.util.Scanner;
+import static mansionfoster.ListaPaquetes.preciousar;
+import static mansionfoster.Piso.preciousarpi;
 
 /**
  *
@@ -47,26 +49,30 @@ public class Reserva {
     public void setNumHabsARes(int numHabsARes) {
         this.numHabsARes = numHabsARes;
     }
-
-    public void setCheckOut(Check checkOut) {
-        this.checkOut = checkOut;
-    }
-
-    public void setCheckIn(Check checkIn) {
-        this.checkIn = checkIn;
-    }
-    
+//
+//    public void setCheckOut(Check checkOut) {
+//        this.checkOut = checkOut;
+//    }
+//
+//    public void setCheckIn(Check checkIn) {
+//        this.checkIn = checkIn;
+//    }
+//    
     public void NumDia(Check checkIn, Check checkOut){
         
     }
     
+    public static int saltin=0;
     public static void reservar() {
 
-        System.out.println("Que habitacion quiere");
-        Scanner sc = new Scanner(System.in);
-        int numHab = sc.nextInt();
-       
-       
+       ListaPaquetes.obtenerPrecioPack();
+       saltin=saltin+preciousar;
+        //System.out.println(saltin);    
+        Piso.obtenerPrecio();
+        float aux= (float)saltin;
+        aux=preciousarpi+ aux;
+        System.out.println(" El costo total de su habitacion sera de:   "+"$"+aux);
+        
 
     }
 

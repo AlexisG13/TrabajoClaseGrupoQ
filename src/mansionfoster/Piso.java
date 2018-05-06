@@ -61,8 +61,6 @@ public class Piso {
     }
 //Habitacion(char letraPiso, int numHab,float costoNoche, boolean estado)
 
-
-
     public static void cambiaEstadoPisos() {
         int estado = 0;
         Scanner sc = new Scanner(System.in);
@@ -86,29 +84,37 @@ public class Piso {
         Piso.mostrar();
     }
 
-
-       public static void cambiarPrecioHabitacion() {
+    public static void cambiarPrecioHabitacion() {
         System.out.println("Que habitacion quiere");
         Scanner sc = new Scanner(System.in);
         int numHabi = sc.nextInt();
         System.out.println("Cual es el nuevo valor");
         int nuevoValor = sc.nextInt();
-        piso.get(numHabi-1).setCostoNoche(nuevoValor);
-        
+        piso.get(numHabi - 1).setCostoNoche(nuevoValor);
 
     }
-       
-          public static void cambiarEstadoHabitacion(){
-       System.out.println("Que habitacion quiere");
-       Scanner sc = new Scanner(System.in);
-        int numHab= sc.nextInt();
-        int estado=0;
+
+    public static void cambiarEstadoHabitacion() {
+        System.out.println("Que habitacion quiere");
+        Scanner sc = new Scanner(System.in);
+        int numHab = sc.nextInt();
+        int estado = 0;
         System.out.println("Estado habilitado 1, deshablitado 0");
-        estado= sc.nextInt();
-        if(estado==1){
-            piso.get(numHab-1).setEstado(true);
-        }else{ 
-            piso.get(numHab-1).setEstado(false);
+        estado = sc.nextInt();
+        if (estado == 1) {
+            piso.get(numHab - 1).setEstado(true);
+        } else {
+            piso.get(numHab - 1).setEstado(false);
         }
-}
+    }
+    
+    public static void obtenerPrecio(){
+        System.out.println("Que habitacion quiere");
+        Scanner sc = new Scanner(System.in);
+        int numHabi = sc.nextInt();
+        piso.get(numHabi).getCostoNoche();
+        System.out.println( piso.get(numHabi).getCostoNoche());
+        
+        
+    }
 }

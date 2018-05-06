@@ -26,6 +26,7 @@ public class MansionFoster {
         Default def = new Default();
         Admin admin = new Admin();
         Piso.AgregaPiso();
+        ListaPaquetes.IniciarPacks();
         int opcion = 4;
         Scanner leer = new Scanner(System.in);
 

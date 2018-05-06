@@ -25,6 +25,9 @@ public class MansionFoster {
     public static void main(String[] args) {
         Default def = new Default();
         Admin admin = new Admin();
+        System.out.println("Cuantos pisos querrá: ");
+        Scanner numPisoss = new Scanner (System.in);
+        Piso.nPisos = numPisoss.nextInt();
         Piso.AgregaPiso();
         ListaPaquetes.IniciarPacks();
         int opcion = 4;

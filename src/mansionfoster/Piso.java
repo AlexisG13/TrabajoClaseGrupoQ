@@ -16,8 +16,8 @@ public class Piso {
 
     public static int nPisos = 6;
     public static ArrayList<Habitacion> piso = new ArrayList<>();
-
-    ;
+    public static float preciousarpi = 0;
+    
 
     public Piso() {
 
@@ -108,13 +108,14 @@ public class Piso {
         }
     }
     
-    public static void obtenerPrecio(){
+    public static float obtenerPrecio(){
         System.out.println("Que habitacion quiere");
         Scanner sc = new Scanner(System.in);
         int numHabi = sc.nextInt();
-        piso.get(numHabi).getCostoNoche();
-        System.out.println( piso.get(numHabi).getCostoNoche());
-        
-        
+        preciousarpi=piso.get(numHabi).getCostoNoche();
+        //System.out.println(preciousarpi);
+       
+       return preciousarpi;
+       
     }
 }

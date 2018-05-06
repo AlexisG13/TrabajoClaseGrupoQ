@@ -40,8 +40,7 @@ public class Default {
                         Piso.mostrar();
                         break;
                     case 2: //Agregar reserva
-                        //Reserva reserva = new Reserva();
-                        // reserva.Reservar();
+                       Reserva.reservar();
                         break;
                     case 3: //Cancelar reserva
 

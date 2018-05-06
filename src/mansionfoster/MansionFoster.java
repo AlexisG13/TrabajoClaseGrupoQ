@@ -25,7 +25,7 @@ public class MansionFoster {
     public static void main(String[] args) {
         Default def = new Default();
         Admin admin = new Admin();
-
+        Piso.AgregaPiso();
         int opcion = 4;
         Scanner leer = new Scanner(System.in);
 

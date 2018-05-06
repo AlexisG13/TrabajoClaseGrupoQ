@@ -89,6 +89,29 @@ public class Piso {
         }
     }
 
+    public static void cambiaEstadoPisos() {
+        int estado = 0;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese el piso(formato ABC): ");
+        Scanner ch = new Scanner(System.in);
+        char habitacion = ch.next().charAt(0);
+        System.out.println("Estado habilitado: 1, deshablitado: 0");
+        estado = sc.nextInt();
+
+        for (Habitacion e : piso) {
+            if (e.getLetraPiso() == habitacion) {
+                e.setLetraPiso(habitacion);
+                if (estado == 1) {
+                    e.setEstado(true);
+                } else {
+                    e.setEstado(false);
+                }
+            }
+        }
+        System.out.println("--------------ACTUALIZANDO ESTADOS ------------");
+        Piso.mostrar();
+    }
+
     public static void cambiarPrecioHabitacion() {
         System.out.println("Que habitacion quiere");
         Scanner sc = new Scanner(System.in);

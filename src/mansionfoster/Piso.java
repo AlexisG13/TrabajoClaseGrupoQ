@@ -61,33 +61,7 @@ public class Piso {
     }
 //Habitacion(char letraPiso, int numHab,float costoNoche, boolean estado)
 
-    public static void cambiarEstadoHabitacion() {
-        int estado = 0;
-        System.out.println("Que habitacion quiere: ");
-        Scanner sc = new Scanner(System.in);
-        int numHab = sc.nextInt();
-        System.out.println("Ingrese el piso(formato abc): ");
-        Scanner ch = new Scanner(System.in);
-        char habitacion = ch.next().charAt(0);
-        //habitacion = ch.next().charAt(0);
-        System.out.println("Estado habilitado 1, deshablitado 0");
-        estado = sc.nextInt();
 
-        for (int j = 1; j < nPisos; j++) {
-            if (habitacion == nPisos) {
-                for (int h = 0; h < 10; h++) {
-                    if (estado == 1) {
-                        //piso.get(habitacion);
-                        piso.get(numHab).setEstado(true);
-
-                    } else {
-                        piso.get(numHab).setEstado(false);
-
-                    }
-                }
-            }
-        }
-    }
 
     public static void cambiaEstadoPisos() {
         int estado = 0;
@@ -112,13 +86,29 @@ public class Piso {
         Piso.mostrar();
     }
 
-    public static void cambiarPrecioHabitacion() {
+
+       public static void cambiarPrecioHabitacion() {
         System.out.println("Que habitacion quiere");
         Scanner sc = new Scanner(System.in);
         int numHabi = sc.nextInt();
         System.out.println("Cual es el nuevo valor");
         int nuevoValor = sc.nextInt();
-        piso.get(numHabi).setCostoNoche(nuevoValor);
+        piso.get(numHabi-1).setCostoNoche(nuevoValor);
+        
 
     }
+       
+          public static void cambiarEstadoHabitacion(){
+       System.out.println("Que habitacion quiere");
+       Scanner sc = new Scanner(System.in);
+        int numHab= sc.nextInt();
+        int estado=0;
+        System.out.println("Estado habilitado 1, deshablitado 0");
+        estado= sc.nextInt();
+        if(estado==1){
+            piso.get(numHab-1).setEstado(true);
+        }else{ 
+            piso.get(numHab-1).setEstado(false);
+        }
+}
 }

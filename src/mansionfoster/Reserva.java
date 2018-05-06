@@ -5,6 +5,8 @@
  */
 package mansionfoster;
 
+import java.util.Scanner;
+
 /**
  *
  * @author andre
@@ -57,4 +59,15 @@ public class Reserva {
     public void NumDia(Check checkIn, Check checkOut){
         
     }
+    
+    public static void reservar() {
+
+        System.out.println("Que habitacion quiere");
+        Scanner sc = new Scanner(System.in);
+        int numHab = sc.nextInt();
+       
+       
+
+    }
+
 }

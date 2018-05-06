@@ -14,6 +14,7 @@ public class ListaPaquetes {
     
     public static ArrayList<Paquete> Packs = new ArrayList<>();
     public ListaPaquetes(){};
+    public static int preciousar;
     public static void IniciarPacks(){
         Packs.add(new Paquete("Premium",true,true,true,true,true,150));
         Packs.add(new Paquete("Básico",false,true,false,false,true,10));
@@ -93,22 +94,23 @@ public class ListaPaquetes {
         Packs.set((s-1),new Paquete(o,des,true,true,true,true,pipo));             
     }
     
-    public static void obtenerPrecioPack(){
+    public static int obtenerPrecioPack(){
         
      System.out.println("Que paquete quiere");
         Scanner sc = new Scanner(System.in);
         String pack = sc.nextLine();
         if(pack.equals("premiun")){
-         int precio = Packs.get(0).precio;
-         System.out.println(precio);
+         preciousar = Packs.get(0).precio;
+         System.out.println(preciousar);
+         
         }
         if(pack.equals("basico")){
-            int precio = Packs.get(1).precio;
-         System.out.println(precio);
+         preciousar = Packs.get(1).precio;
+         System.out.println(preciousar);
             
-        }
-        
-        
+        }      
+        return preciousar;
     }
+            
     
 }

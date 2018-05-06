@@ -106,7 +106,7 @@ public class Admin {
                             //            Piso.mostrar();
                             break;
                         case 2: //Des/Habilitar Piso
-                            //              Piso.AgregaPiso();
+                            Piso.cambiaEstadoPisos();
                             //              Piso.mostrar();
                             break;
                         case 3: //Modificar Precios

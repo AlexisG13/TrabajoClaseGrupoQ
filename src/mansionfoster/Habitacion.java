@@ -43,6 +43,22 @@ public class Habitacion extends Piso {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
+    public char getLetraPiso() {
+        return letraPiso;
+    }
+
+    public void setLetraPiso(char letraPiso) {
+        this.letraPiso = letraPiso;
+    }
+
+    public int getNumHab() {
+        return numHab;
+    }
+
+    public void setNumHab(int numHab) {
+        this.numHab = numHab;
+    }
      
     
 }

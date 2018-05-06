@@ -101,12 +101,12 @@ public class ListaPaquetes {
         String pack = sc.nextLine();
         if(pack.equals("premiun")){
          preciousar = Packs.get(0).precio;
-         System.out.println(preciousar);
+         System.out.println("El paquete cuesta: $"+preciousar);
          
         }
         if(pack.equals("basico")){
          preciousar = Packs.get(1).precio;
-         System.out.println(preciousar);
+         System.out.println("El paquete cuesta: $"+preciousar);
             
         }      
         return preciousar;

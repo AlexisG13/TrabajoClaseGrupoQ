@@ -94,13 +94,13 @@ public class Piso {
         Scanner sc = new Scanner(System.in);
         System.out.println("Ingrese el piso(formato ABC): ");
         Scanner ch = new Scanner(System.in);
-        char habitacion = ch.next().charAt(0);
+        char pisos = ch.next().charAt(0);
         System.out.println("Estado habilitado: 1, deshablitado: 0");
         estado = sc.nextInt();
 
         for (Habitacion e : piso) {
-            if (e.getLetraPiso() == habitacion) {
-                e.setLetraPiso(habitacion);
+            if (e.getLetraPiso() == pisos) {
+                //e.setLetraPiso(habitacion);
                 if (estado == 1) {
                     e.setEstado(true);
                 } else {

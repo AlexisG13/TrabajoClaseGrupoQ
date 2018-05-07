@@ -42,7 +42,7 @@ public class MansionFoster {
                         def.Menu();
                         break;
                     case 2: //Sistema Administrativo
-                        admin.Menu();
+                        admin.login();
                         break;
                     case 3:
                         System.out.println("    Que tenga un buen día..");

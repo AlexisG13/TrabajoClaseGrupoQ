@@ -65,7 +65,8 @@ public class Admin {
         System.out.println("2. Deshabilitar / Habilitar Pisos");
         System.out.println("3. Modificar Precios");
         System.out.println("4. Modificar Paquetes");
-        System.out.println("5. Salir");
+        System.out.println("5. Agregar pisos");
+        System.out.println("6. Salir");
         System.out.print(": ");
     }
 
@@ -83,26 +84,26 @@ public class Admin {
     public void Menu() {
         //Piso habitacion = new Piso();
         ListaPaquetes Packs = new ListaPaquetes();
-        int opcion = 6;
+        int opcion = 7;
         int opcion2 = 7;
         Scanner leer = new Scanner(System.in);
 
-        while (opcion != 5) {
+        while (opcion != 6) {
             opciones();
             try {
                 opcion = leer.nextInt();
                 switch (opcion) {
                     case 1: //Des/Habilitar Habitacion 
-                                      Piso.cambiarEstadoHabitacion();
-                                    Piso.mostrar();
+                        Piso.cambiarEstadoHabitacion();
+                        Piso.mostrar();
                         break;
                     case 2: //Des/Habilitar Piso
                         Piso.cambiaEstadoPisos();
-                                   Piso.mostrar();
+                        Piso.mostrar();
                         break;
                     case 3: //Modificar Precios
-                                      Piso.cambiarPrecioHabitacion();
-                                      Piso.mostrar();
+                        Piso.cambiarPrecioHabitacion();
+                        Piso.mostrar();
                         break;
                     case 4: //Modificar Paquetes
                         Scanner pepe = new Scanner(System.in);
@@ -139,6 +140,13 @@ public class Admin {
                             }
                         }
                     case 5:
+                        System.out.println("Digite el numero de pisos que desea agregar ");
+                        Scanner numPisoss = new Scanner(System.in);
+                        Piso.nPisos = numPisoss.nextInt();
+                        Piso.AgregaPiso();
+                        System.out.println("--- SE AGREGARON EL NUMERO DE PISOS ---");
+                        Piso.mostrar();
+                    case 6:
                         System.out.println("    Saliendo del Sistema Administrativo");
                         break;
                     default:

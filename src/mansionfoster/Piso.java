@@ -17,7 +17,6 @@ public class Piso {
     public static int nPisos = 6;
     public static ArrayList<Habitacion> piso = new ArrayList<>();
     public static float preciousarpi = 0;
-    
 
     public Piso() {
 
@@ -50,6 +49,7 @@ public class Piso {
         for (Habitacion e : piso) {
             if (cont == 10) {
                 cont -= 10;
+
             }
             if (cont == 1) {
                 System.out.println("-----------Piso #" + numeroPiso + "------------");
@@ -102,20 +102,54 @@ public class Piso {
         System.out.println("Estado habilitado 1, deshablitado 0");
         estado = sc.nextInt();
         if (estado == 1) {
-            piso.get(numHab - 1).setEstado(true);
+            piso.get(numHab - 11).setEstado(true);
         } else {
-            piso.get(numHab - 1).setEstado(false);
+            piso.get(numHab - 11).setEstado(false);
         }
     }
-    
-    public static float obtenerPrecio(){
+
+    public static float obtenerPrecio() {
         System.out.println("Que habitacion quiere");
         Scanner sc = new Scanner(System.in);
         int numHabi = sc.nextInt();
-        preciousarpi=piso.get(numHabi).getCostoNoche();
+        preciousarpi = piso.get(numHabi).getCostoNoche();
         //System.out.println(preciousarpi);
-       
-       return preciousarpi;
-       
+
+        return preciousarpi;
+
     }
+
+    public static void cambiarEstadoHabitacionaux() {
+        //System.out.println("Que habitacion quiere");
+        Scanner sc = new Scanner(System.in);
+        int numHab = sc.nextInt();
+        int estado = 0;
+        //System.out.println("Estado habilitado 1, deshablitado 0");
+        if (estado == 0) {
+            piso.get(numHab - 11).setEstado(false);
+            System.out.println("Reserva confirmada");
+        }
+    }
+
+    public static void verPisoOcupados() {
+
+        int numeroPiso = 1;
+        int cont = 1;
+        for (Habitacion e : piso) {
+            
+            
+            
+            if (cont == 10) {
+                cont -= 10;
+
+            }
+            if (cont == 1) {
+                System.out.println("-----------Piso #" + numeroPiso + "------------");
+                numeroPiso++;
+            }
+            System.out.println(e.toString());
+            cont++;
+        }
+    }
+
 }

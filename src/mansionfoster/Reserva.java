@@ -65,35 +65,51 @@ public class Reserva {
     }
     
     public static int saltin=0;
+    public static int flag =0;
+    static float preciototal=0;
     public static void reservar() {
-
        ListaPaquetes.obtenerPrecioPack();
+       while(ListaPaquetes.obtenerPrecioPack()==0){
+           ListaPaquetes.obtenerPrecioPack();
+       }
        saltin=saltin+preciousar;
         //System.out.println(saltin);    
         Piso.obtenerPrecio();
         float aux= (float)saltin;
         aux=preciousarpi+ aux;
-        System.out.println(" El costo total de su habitacion sera de:   "+"$"+aux);
+        Scanner scan = new Scanner(System.in);
+        while(flag!=1){
+        System.out.println("Ingrese la fecha de entrada (formato mm-dd)");
+        String fechaIng = "2018-"+scan.next();
+        System.out.println("Ingrese la fecha de salida (formato mm-dd)");
+        String fechaSal = "2018-"+scan.next();
+        LocalDate d1 = LocalDate.parse(fechaIng);
+        LocalDate d2 = LocalDate.parse(fechaSal);
+        if(VerificarFecha(d1,d2)==true){
+            System.out.println("Fecha confirmada");
+            long dias = ChronoUnit.DAYS.between(d1, d2);
+            preciototal=dias*aux;
+            flag=1;
+        }
+        else{System.out.println("Excede los dias maximo de hospedaje");           
+                }
+        }
+        System.out.println(" El costo total de su habitacion sera de:   "+"$"+preciototal);
+        
         System.out.println("Para confirmar su reserva vuela a introducir su numero de habitacion: ");
         Piso.cambiarEstadoHabitacionaux();
 
     }
     
-    public static void VerificarFecha(){
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Ingrese la fecha de entrada");
-        String fechaIng = "2018-"+scan.next();
-        System.out.println("Ingrese la fecha de salida");
-        String fechaSal = "2018-"+scan.next();
-        LocalDate d1 = LocalDate.parse(fechaIng);
-        LocalDate d2 = LocalDate.parse(fechaSal);
+    public static boolean VerificarFecha(LocalDate d1,LocalDate  d2){
         long dias = ChronoUnit.DAYS.between(d1, d2);
         if(dias>7){
-            System.out.println("Excede los días de hospedaje");
+            return false;
         }
         else{
-            System.out.println("A oc");
+            return true;
         }
+        
     }
 
 }

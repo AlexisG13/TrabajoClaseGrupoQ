@@ -64,24 +64,34 @@ public class Piso {
     public static void cambiaEstadoPisos() {
         int estado = 0;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese el piso(formato ABC): ");
-        Scanner ch = new Scanner(System.in);
-        char pisos = ch.next().charAt(0);
-        System.out.println("Estado habilitado: 1, deshablitado: 0");
-        estado = sc.nextInt();
+        int flag = 1;
 
-        for (Habitacion e : piso) {
-            if (e.getLetraPiso() == pisos) {
-                //e.setLetraPiso(habitacion);
-                if (estado == 1) {
-                    e.setEstado(true);
-                } else {
-                    e.setEstado(false);
+        while (flag == 1) {
+            System.out.println("Ingrese el piso(formato ABC): ");
+            Scanner ch = new Scanner(System.in);
+            char pisos = ch.next().charAt(0);
+            System.out.println("Estado: habilitado: 1, deshablitado: 0");
+            estado = sc.nextInt();
+
+            for (Habitacion e : piso) {
+                if (e.getLetraPiso() == pisos) {
+                    flag = 0;
+                    //e.setLetraPiso(habitacion);
+                    if (estado == 1) {
+                        e.setEstado(true);
+                    } else {
+                        e.setEstado(false);
+                    }
                 }
             }
+            if (flag == 1) {
+                System.err.println("El piso que intenta modificar NO existe");
+            }
         }
+
         System.out.println("--------------ACTUALIZANDO ESTADOS ------------");
         Piso.mostrar();
+
     }
 
     public static void cambiarPrecioHabitacion() {
@@ -136,9 +146,7 @@ public class Piso {
         int numeroPiso = 1;
         int cont = 1;
         for (Habitacion e : piso) {
-            
-            
-            
+
             if (cont == 10) {
                 cont -= 10;
 

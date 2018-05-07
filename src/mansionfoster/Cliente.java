@@ -5,13 +5,15 @@
  */
 package mansionfoster;
 
+import java.util.Scanner;
+
 /**
  *
  * @author rauli
  */
 public class Cliente {
 
-    private int DUI;
+    private static int DUI;
 
     public Cliente(int DUI) {
         this.DUI = DUI;
@@ -24,5 +26,12 @@ public class Cliente {
     public int getDUI() {
         return DUI;
     }
-    
+    public static void pedieldui(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Ingrese su numero de DUI: ");
+        DUI=sc.nextInt();
+        
+        
+        
+    }
 }

@@ -73,6 +73,8 @@ public class Reserva {
         aux=preciousarpi+ aux;
         System.out.println(" El costo total de su habitacion sera de:   "+"$"+aux);
         
+        System.out.println("Para confirmar su reserva vuela a introducir su numero de habitacion: ");
+        Piso.cambiarEstadoHabitacionaux();
 
     }
 

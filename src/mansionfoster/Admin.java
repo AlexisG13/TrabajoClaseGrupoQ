@@ -83,7 +83,6 @@ public class Admin {
     public void Menu() {
         //Piso habitacion = new Piso();
         ListaPaquetes Packs = new ListaPaquetes();
-        ListaPaquetes.IniciarPacks();
         int opcion = 6;
         int opcion2 = 7;
         Scanner leer = new Scanner(System.in);
@@ -94,16 +93,16 @@ public class Admin {
                 opcion = leer.nextInt();
                 switch (opcion) {
                     case 1: //Des/Habilitar Habitacion 
-                        //              Piso.cambiarEstadoHabitacion();
-                        //            Piso.mostrar();
+                                      Piso.cambiarEstadoHabitacion();
+                                    Piso.mostrar();
                         break;
                     case 2: //Des/Habilitar Piso
                         Piso.cambiaEstadoPisos();
-                        //              Piso.mostrar();
+                                   Piso.mostrar();
                         break;
                     case 3: //Modificar Precios
-                        //              Piso.cambiarPrecioHabitacion();
-                        //              Piso.mostrar();
+                                      Piso.cambiarPrecioHabitacion();
+                                      Piso.mostrar();
                         break;
                     case 4: //Modificar Paquetes
                         Scanner pepe = new Scanner(System.in);

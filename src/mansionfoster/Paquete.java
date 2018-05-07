@@ -9,7 +9,7 @@ package mansionfoster;
  *
  * @author Alexis Gomez
  */
-public class Paquete extends ListaPaquetes {
+public class Paquete {
 //Servicios que pueden contener los paquetes
 
     private String nombre;
@@ -19,11 +19,11 @@ public class Paquete extends ListaPaquetes {
     public boolean minibar;
     public boolean internet;
     public int precio;
+    
 
     public Paquete(String nombre, boolean desayuno, boolean piscina,
             boolean servicioHab, boolean minibar, boolean internet,int precio) {
         this.nombre = nombre;
-        
         this.desayuno = desayuno;
         this.piscina = piscina;
         this.servicioHab = servicioHab;

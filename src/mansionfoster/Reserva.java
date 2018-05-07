@@ -24,8 +24,7 @@ public class Reserva {
 
     public Reserva(String nombre, int DUI, LocalDate d1, LocalDate d2,
     float preciototal,int numHabi) {
-        this.numDias = numDias;
-        this.numHabsARes = numHabsARes;
+               
     }
 
     public int getNumDias() {
@@ -54,15 +53,10 @@ public class Reserva {
         Scanner sc = new Scanner(System.in);
         numHabi = sc.nextInt();
         Scanner pipo = new Scanner(System.in);
-        System.out.println("Que paquete quiere");
-        pack = pipo.nextLine();
-       ListaPaquetes.obtenerPrecioPack(pack);
-       while(ListaPaquetes.obtenerPrecioPack(pack)==0){
-           System.out.println("Que paquete quiere");
-           Scanner donko = new Scanner(System.in);
-            pack = donko.nextLine();
-           ListaPaquetes.obtenerPrecioPack(pack);
-       }
+       do{System.out.println("Que paquete desea");
+           pack = pipo.nextLine();
+           ListaPaquetes.obtenerPrecioPack(pack); 
+       }while(preciousar==0);
        saltin=saltin+preciousar;
         //System.out.println(saltin);    
         Piso.obtenerPrecio(numHabi);

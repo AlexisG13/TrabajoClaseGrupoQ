@@ -5,6 +5,8 @@
  */
 package mansionfoster;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 import static mansionfoster.ListaPaquetes.preciousar;
 import static mansionfoster.Piso.preciousarpi;
@@ -76,6 +78,23 @@ public class Reserva {
         System.out.println("Para confirmar su reserva vuela a introducir su numero de habitacion: ");
         Piso.cambiarEstadoHabitacionaux();
 
+    }
+    
+    public static void VerificarFecha(){
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Ingrese la fecha de entrada");
+        String fechaIng = "2018-"+scan.next();
+        System.out.println("Ingrese la fecha de salida");
+        String fechaSal = "2018-"+scan.next();
+        LocalDate d1 = LocalDate.parse(fechaIng);
+        LocalDate d2 = LocalDate.parse(fechaSal);
+        long dias = ChronoUnit.DAYS.between(d1, d2);
+        if(dias>7){
+            System.out.println("Excede los días de hospedaje");
+        }
+        else{
+            System.out.println("A oc");
+        }
     }
 
 }

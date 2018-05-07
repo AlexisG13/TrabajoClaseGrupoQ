@@ -99,17 +99,20 @@ public class ListaPaquetes {
      System.out.println("Que paquete quiere");
         Scanner sc = new Scanner(System.in);
         String pack = sc.nextLine();
-        if(pack.equals("premiun")){
-         preciousar = Packs.get(0).precio;
-         System.out.println("El paquete cuesta: $"+preciousar);
-         
-        }
-        if(pack.equals("basico")){
-         preciousar = Packs.get(1).precio;
-         System.out.println("El paquete cuesta: $"+preciousar);
+        
+        for(int i=0;i<Packs.size();i++){
+            if(pack.equalsIgnoreCase(Packs.get(i).getNombre())){
+                preciousar = Packs.get(i).precio;
+                System.out.println("El paquete cuesta: $"+preciousar);
+                return preciousar;
+            }
+           
             
-        }      
-        return preciousar;
+        
+        
+        }
+        
+       return 0;
     }
             
     

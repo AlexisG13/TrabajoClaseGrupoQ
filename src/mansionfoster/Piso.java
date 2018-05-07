@@ -31,11 +31,11 @@ public class Piso {
             //System.out.println("Piso: " + j);
             for (int i = 0; i < 10; i++) {
                 if (i % 2 == 0) {
-                    piso.add(new Habitacion(p, i + 1, 100, true));
+                    piso.add(new Habitacion(p, i + 1, 120, true));
                     //System.out.println("Habitacion doble #"+i);
                 }
                 if (i % 2 != 0) {
-                    piso.add(new Habitacion(p, i + 1, 120, true));
+                    piso.add(new Habitacion(p, i + 1, 100, true));
                     //System.out.println("Habitacion sencilla #"+i);
                 }
             }
@@ -109,7 +109,7 @@ public class Piso {
     }
 
     public static float obtenerPrecio() {
-        System.out.println("Que habitacion quiere");
+        System.out.println("Que habitacion quiere (Se ingresa el piso deseado y luego el numero de habitacion)");
         Scanner sc = new Scanner(System.in);
         int numHabi = sc.nextInt();
         preciousarpi = piso.get(numHabi).getCostoNoche();

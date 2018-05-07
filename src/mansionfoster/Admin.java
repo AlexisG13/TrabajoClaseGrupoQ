@@ -50,7 +50,7 @@ public class Admin {
         pass = leer.nextLine();
 
         while (!pass.equals(password)) {
-            System.out.println("    Contraseña incorrecta, vuelve a intentarlo");
+            System.err.println("    Contraseña incorrecta, vuelve a intentarlo");
             System.out.println("Username: " + username);
             System.out.print("Password: ");
             pass = leer.nextLine();
@@ -81,85 +81,74 @@ public class Admin {
     }
 
     public void Menu() {
-        String user = "Rafa";
-        String pass = "admin";
-        Scanner log = new Scanner(System.in);
-        System.out.println("Ingrese el usuario");
-        String us = log.next();
-        System.out.println("Ingrese la contraseña");
-        String pas = log.next();
-        if (user.equals(us) == true && pass.equals(pas) == true) {
-            //Piso habitacion = new Piso();
-            ListaPaquetes Packs = new ListaPaquetes();
-            ListaPaquetes.IniciarPacks();
-            int opcion = 6;
-            int opcion2 = 7;
-            Scanner leer = new Scanner(System.in);
+        //Piso habitacion = new Piso();
+        ListaPaquetes Packs = new ListaPaquetes();
+        ListaPaquetes.IniciarPacks();
+        int opcion = 6;
+        int opcion2 = 7;
+        Scanner leer = new Scanner(System.in);
 
-            while (opcion != 5) {
-                opciones();
-                try {
-                    opcion = leer.nextInt();
-                    switch (opcion) {
-                        case 1: //Des/Habilitar Habitacion 
-                            //              Piso.cambiarEstadoHabitacion();
-                            //            Piso.mostrar();
-                            break;
-                        case 2: //Des/Habilitar Piso
-                            Piso.cambiaEstadoPisos();
-                            //              Piso.mostrar();
-                            break;
-                        case 3: //Modificar Precios
-                            //              Piso.cambiarPrecioHabitacion();
-                            //              Piso.mostrar();
-                            break;
-                        case 4: //Modificar Paquetes
-                            Scanner pepe = new Scanner(System.in);
-                            while (opcion2 != 6) {
-                                menuPaquetes();
-                                try {
-                                    opcion2 = pepe.nextInt();
-                                    switch (opcion2) {
-                                        case 1:
-                                            ListaPaquetes.MostrarPacks();
-                                            break;
-                                        case 2:
-                                            ListaPaquetes.AgregarPack();
-                                            break;
-                                        case 3:
-                                            ListaPaquetes.BorrarPack();
-                                            break;
-                                        case 4:
-                                            ListaPaquetes.ModificarPack();
-                                            
-                                            break;
-                                        case 6:
-                                            System.out.println("    Regresando al menu");
-                                            break;
-                                        case 5:
-                                            ListaPaquetes.VerServicios();
-                                            break;
-                                        default:
-                                            System.out.println("    Ingresa una opción valida");
-                                    }
-                                } catch (InputMismatchException e) {
-                                    System.err.println("    Por favor, ingrese un número");
-                                    pepe.nextLine();
+        while (opcion != 5) {
+            opciones();
+            try {
+                opcion = leer.nextInt();
+                switch (opcion) {
+                    case 1: //Des/Habilitar Habitacion 
+                        //              Piso.cambiarEstadoHabitacion();
+                        //            Piso.mostrar();
+                        break;
+                    case 2: //Des/Habilitar Piso
+                        Piso.cambiaEstadoPisos();
+                        //              Piso.mostrar();
+                        break;
+                    case 3: //Modificar Precios
+                        //              Piso.cambiarPrecioHabitacion();
+                        //              Piso.mostrar();
+                        break;
+                    case 4: //Modificar Paquetes
+                        Scanner pepe = new Scanner(System.in);
+                        while (opcion2 != 6) {
+                            menuPaquetes();
+                            try {
+                                opcion2 = pepe.nextInt();
+                                switch (opcion2) {
+                                    case 1:
+                                        ListaPaquetes.MostrarPacks();
+                                        break;
+                                    case 2:
+                                        ListaPaquetes.AgregarPack();
+                                        break;
+                                    case 3:
+                                        ListaPaquetes.BorrarPack();
+                                        break;
+                                    case 4:
+                                        ListaPaquetes.ModificarPack();
+
+                                        break;
+                                    case 6:
+                                        System.out.println("    Regresando al menu");
+                                        break;
+                                    case 5:
+                                        ListaPaquetes.VerServicios();
+                                        break;
+                                    default:
+                                        System.out.println("    Ingresa una opción valida");
                                 }
+                            } catch (InputMismatchException e) {
+                                System.err.println("    Por favor, ingrese un número");
+                                pepe.nextLine();
                             }
-                        case 5:
-                            System.out.println("    Saliendo del Sistema Administrativo");
-                            break;
-                        default:
-                            System.out.println("    Por favor ingrese una opción valida");
-                    }
-                } catch (InputMismatchException e) {
-                    System.err.println("    Por favor, ingrese un número");
-                    leer.nextLine();
+                        }
+                    case 5:
+                        System.out.println("    Saliendo del Sistema Administrativo");
+                        break;
+                    default:
+                        System.out.println("    Por favor ingrese una opción valida");
                 }
+            } catch (InputMismatchException e) {
+                System.err.println("    Por favor, ingrese un número");
+                leer.nextLine();
             }
-        } else {
-            System.out.println("Usuario o contraseña incorrecta");
         }
     }
 

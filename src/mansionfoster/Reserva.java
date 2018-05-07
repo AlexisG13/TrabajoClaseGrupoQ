@@ -17,23 +17,15 @@ import static mansionfoster.Piso.preciousarpi;
  */
 public class Reserva {
     private int numDias, numHabsARes;
-    //public Paquete paquete;
-    private Check checkOut;
-    private Check checkIn;
+    public static LocalDate d1;
+    public static LocalDate d2;
+    public static int numHabi;
+    public static String pack;
 
-    public Reserva(int numDias, int numHabsARes, Check checkOut, Check checkIn) {
+    public Reserva(String nombre, int DUI, LocalDate d1, LocalDate d2,
+    float preciototal,int numHabi) {
         this.numDias = numDias;
         this.numHabsARes = numHabsARes;
-        this.checkOut = checkOut;
-        this.checkIn = checkIn;
-    }
-
-    public Check getCheckOut() {
-        return checkOut;
-    }
-
-    public Check getCheckIn() {
-        return checkIn;
     }
 
     public int getNumDias() {
@@ -51,30 +43,29 @@ public class Reserva {
     public void setNumHabsARes(int numHabsARes) {
         this.numHabsARes = numHabsARes;
     }
-//
-//    public void setCheckOut(Check checkOut) {
-//        this.checkOut = checkOut;
-//    }
-//
-//    public void setCheckIn(Check checkIn) {
-//        this.checkIn = checkIn;
-//    }
-//    
-    public void NumDia(Check checkIn, Check checkOut){
-        
-    }
     
     public static int saltin=0;
     public static int flag =0;
     static float preciototal=0;
+    
+        
     public static void reservar() {
-       ListaPaquetes.obtenerPrecioPack();
-       while(ListaPaquetes.obtenerPrecioPack()==0){
-           ListaPaquetes.obtenerPrecioPack();
+        System.out.println("Que habitacion quiere (Se ingresa el piso deseado y luego el numero de habitacion)");
+        Scanner sc = new Scanner(System.in);
+        numHabi = sc.nextInt();
+        Scanner pipo = new Scanner(System.in);
+        System.out.println("Que paquete quiere");
+        pack = pipo.nextLine();
+       ListaPaquetes.obtenerPrecioPack(pack);
+       while(ListaPaquetes.obtenerPrecioPack(pack)==0){
+           System.out.println("Que paquete quiere");
+           Scanner donko = new Scanner(System.in);
+            pack = donko.nextLine();
+           ListaPaquetes.obtenerPrecioPack(pack);
        }
        saltin=saltin+preciousar;
         //System.out.println(saltin);    
-        Piso.obtenerPrecio();
+        Piso.obtenerPrecio(numHabi);
         float aux= (float)saltin;
         aux=preciousarpi+ aux;
         Scanner scan = new Scanner(System.in);
@@ -83,8 +74,8 @@ public class Reserva {
         String fechaIng = "2018-"+scan.next();
         System.out.println("Ingrese la fecha de salida (formato mm-dd)");
         String fechaSal = "2018-"+scan.next();
-        LocalDate d1 = LocalDate.parse(fechaIng);
-        LocalDate d2 = LocalDate.parse(fechaSal);
+        d1 = LocalDate.parse(fechaIng);
+        d2 = LocalDate.parse(fechaSal);
         if(VerificarFecha(d1,d2)==true){
             System.out.println("Fecha confirmada");
             long dias = ChronoUnit.DAYS.between(d1, d2);

@@ -94,11 +94,7 @@ public class ListaPaquetes {
         Packs.set((s-1),new Paquete(o,des,true,true,true,true,pipo));             
     }
     
-    public static int obtenerPrecioPack(){
-        
-     System.out.println("Que paquete quiere");
-        Scanner sc = new Scanner(System.in);
-        String pack = sc.nextLine();
+    public static int obtenerPrecioPack(String pack){
         for(int i=0;i<Packs.size();i++){
             if(pack.equalsIgnoreCase(Packs.get(i).getNombre())){
                 preciousar = Packs.get(i).precio;

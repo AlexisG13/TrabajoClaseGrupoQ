@@ -14,7 +14,7 @@ import java.util.Scanner;
  */
 public class Piso {
 
-    public static int nPisos = 6;
+    public static int nPisos = 0;
     public static ArrayList<Habitacion> piso = new ArrayList<>();
     public static float preciousarpi = 0;
 
@@ -108,10 +108,7 @@ public class Piso {
         }
     }
 
-    public static float obtenerPrecio() {
-        System.out.println("Que habitacion quiere (Se ingresa el piso deseado y luego el numero de habitacion)");
-        Scanner sc = new Scanner(System.in);
-        int numHabi = sc.nextInt();
+    public static float obtenerPrecio(int numHabi) {
         preciousarpi = piso.get(numHabi).getCostoNoche();
         //System.out.println(preciousarpi);
 

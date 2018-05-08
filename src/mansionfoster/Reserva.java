@@ -10,6 +10,7 @@ import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 import static mansionfoster.ListaPaquetes.preciousar;
 import static mansionfoster.Piso.preciousarpi;
+import static mansionfoster.Piso.c;
 import java.util.*;
 
 /**
@@ -30,11 +31,21 @@ public class Reserva {
     public static int saltin=0;
     public static int flag =0;
     static float preciototal=0;
+    public static char c = 65;
+    public static int aux=0;
+     public static int numHabitacion=0;
+    
    
     public static void reservar() {
         System.out.println("Que habitacion quiere (Se ingresa el piso deseado y luego el numero de habitacion)");
         Scanner sc = new Scanner(System.in);
-        numHabi = sc.nextInt();
+              Scanner reader = new Scanner(System.in);
+        int z=0;
+        c = reader.next().charAt(0);
+        int habi=0;
+        z= (c-64)*10;
+         habi=sc.nextInt();
+         numHabitacion=habi+z;
         Scanner pipo = new Scanner(System.in);
        do{System.out.println("Que paquete desea");
            pack = pipo.nextLine();

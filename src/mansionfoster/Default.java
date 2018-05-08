@@ -37,7 +37,8 @@ public class Default {
                 opcion = leer.nextInt();
                 switch (opcion) {
                     case 1: //Ver reservas
-                        ListaReservas.VerReserva();
+                        ListaReservas.mostrarRes();
+                        //ListaReservas.VerReserva();
                         break;
                     case 2: //Agregar reserva
                        Reserva.reservar();

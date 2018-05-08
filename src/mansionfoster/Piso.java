@@ -172,7 +172,7 @@ public class Piso {
     public static void cambiarEstadoHabitacionaux() {
         //System.out.println("Que habitacion quiere");
         Scanner sc = new Scanner(System.in);
-        int numHab = sc.nextInt();
+        //int numHab = sc.nextInt();
         int estado = 0;
         Scanner reader = new Scanner(System.in);
         System.out.println("Letra de piso (ABC...): ");

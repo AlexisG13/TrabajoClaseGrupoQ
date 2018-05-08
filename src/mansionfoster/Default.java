@@ -37,13 +37,13 @@ public class Default {
                 opcion = leer.nextInt();
                 switch (opcion) {
                     case 1: //Ver reservas
-                        ListaReservas.mostrarRes();
-                        //ListaReservas.VerReserva();
+                        Reserva.MostrarReservas();
                         break;
                     case 2: //Agregar reserva
                        Reserva.reservar();
                         break;
                     case 3: //Cancelar reserva
+                        Reserva.BorrarReserva();
                         break;
                     case 4: //Modificar reserva
                         break;

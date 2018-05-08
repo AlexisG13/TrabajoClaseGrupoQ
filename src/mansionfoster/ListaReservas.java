@@ -39,4 +39,10 @@ public class ListaReservas {
         //Reservaciones.add(new Reserva("Alexis","00122717","02-03","02-06",100,2));
         //Reservaciones.add(new Reserva())
     }
+    public static void mostrarRes(){
+        System.out.println("----------RESERVACIONES---------");
+         for (Reserva e : Reservaciones){
+             System.out.println(e.toString());
+         }
+    }
 }

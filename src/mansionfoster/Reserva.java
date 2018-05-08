@@ -20,15 +20,30 @@ import java.time.format.DateTimeParseException;
 public class Reserva {
 
     private static int numDias, numHabsARes;
-    public static LocalDate d1;
-    public static LocalDate d2;
-    public static int numHabi;
-    public static String pack;
-    public static String nombre;
-    public static String DUI;
-
-    public Reserva(String nombre, String DUI, LocalDate d1, LocalDate d2,
-            float preciototal, int numHabi) {
+    public  LocalDate d1;
+    public  LocalDate d2;
+    public  int numHabi;
+    public  String pack;
+    public  String nombre;
+    public  String DUI;
+    public static ArrayList<Reserva> Reservaciones = new ArrayList<>();
+    public Reserva() {
+    }
+    
+    public void setDUI(String DUI) {
+        this.DUI = DUI;
+    }
+    
+    public void setNombre(String nombre){
+        this.nombre=nombre;
+    }
+    
+    public void setNumHabi(int numHabitacion){
+        this.numHabitacion = numHabitacion;
+    }
+    
+    public void setPrecio(float preciototal){
+        this.preciototal=preciototal;
     }
     ;
       @Override
@@ -45,9 +60,9 @@ public class Reserva {
     public static void reservar() {
         Scanner nomb = new Scanner(System.in);
         System.out.println("Ingrese su nombre");
-        nombre = nomb.next();
+        String nombre = nomb.next();
         System.out.println("Ingrese su DUI");
-        DUI = nomb.next();
+        String DUI = nomb.next();
         System.out.println("Que habitacion quiere (Se ingresa el piso (ABC...) deseado y luego el numero de habitacion): ");
         Scanner sc = new Scanner(System.in);
         Scanner reader = new Scanner(System.in);
@@ -60,11 +75,12 @@ public class Reserva {
         Scanner pipo = new Scanner(System.in);
         do {
             System.out.println("Que paquete desea");
-            pack = pipo.nextLine();
+            String pack = pipo.nextLine();
             ListaPaquetes.obtenerPrecioPack(pack);
         } while (preciousar == 0);
         saltin = saltin + preciousar;
-        //System.out.println(saltin);    
+        //System.out.println(saltin); 
+        int numHabi=0;
         Piso.obtenerPrecio(numHabi);
         float aux = (float) saltin;
         aux = preciousarpi + aux;
@@ -76,13 +92,14 @@ public class Reserva {
             String fechaIng = "2018-" + scan.next();
             System.out.println("Ingrese la fecha de salida (formato mm-dd)");
             String fechaSal = "2018-" + scan.next();
-            d1 = LocalDate.parse(fechaIng);
-            d2 = LocalDate.parse(fechaSal);
+            LocalDate d1 = LocalDate.parse(fechaIng);
+            LocalDate d2 = LocalDate.parse(fechaSal);
             if (VerificarFecha(d1, d2) == true) {
                 System.out.println("Fecha confirmada");
                 long dias = ChronoUnit.DAYS.between(d1, d2);
                 preciototal = dias * aux;
                 flag = 1;
+                System.out.flush();
             } else {
                 System.out.println("Excede los dias maximo de hospedaje");
             }
@@ -91,11 +108,15 @@ public class Reserva {
                 }
         }
         System.out.println(" El costo total de su habitacion sera de:   " + "$" + preciototal);
-        Reserva reserva = new Reserva(nombre, DUI, d1, d2, preciototal, numHabitacion);
-        ListaReservas.AgregarReservas(reserva);
+        Reserva reserva = new Reserva();
+        reserva.setNombre(nombre);
+        reserva.setDUI(DUI);
+        reserva.setNumHabi(numHabitacion);
+        reserva.setPrecio(preciototal);
+        Reservaciones.add(reserva);
         System.out.println("Para confirmar su reserva vuela a introducir  su numero de habitacion: ");
         Piso.cambiarEstadoHabitacionaux();
-        ListaReservas.mostrarRes();
+        //ListaReservas.mostrarRes();
     }
 
     public static boolean VerificarFecha(LocalDate d1, LocalDate d2) {
@@ -106,6 +127,23 @@ public class Reserva {
             return true;
         }
 
+    }
+    
+    public static void MostrarReservas(){
+        System.out.println("Elija el cliente(número)");
+        int i=1;
+        for(Reserva p : Reservaciones){
+            System.out.println(i+"- "+p);
+            i++;
+        }
+        Scanner scan = new Scanner(System.in);
+        int p = scan.nextInt();
+        System.out.println("Cliente: "+Reservaciones.get(p-1).nombre);
+        System.out.println("DUI: "+Reservaciones.get(p-1).DUI);
+        System.out.println("Habitacion: "+Reservaciones.get(p-1).numHabitacion);
+        System.out.println("Fecha de entrada: "+Reservaciones.get(p-1).d1);
+        System.out.println("Fecha de salida: "+Reservaciones.get(p-1).d2);
+        System.out.println("Consumo: $"+Reservaciones.get(p-1).preciototal);
     }
 /*
     @Override

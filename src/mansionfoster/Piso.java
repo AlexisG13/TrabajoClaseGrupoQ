@@ -160,11 +160,13 @@ public class Piso {
         int numHab = sc.nextInt();
         int estado = 0;
         Scanner reader = new Scanner(System.in);
+        System.out.println("Letra de piso (ABC...): ");
         c = reader.next().charAt(0);
         int estadoaux = 0;
         int z = 0;
         int habi = 0;
         z = (c - 64) * 10;
+        System.out.println("Numero de habitacion: ");
         habi = sc.nextInt();
         aux = habi + z;
         if (estadoaux == 0) {

@@ -192,9 +192,29 @@ public class Reserva {
         }
         Scanner s = new Scanner(System.in);
         int modificar = s.nextInt();
+        Reserva reserva = new Reserva();
         System.out.println("Nombre del cliente");
         String o = s.next();
-        Reservaciones.set((modificar-1), new Reserva());
+        reserva.setNombre(o);
+        System.out.println("DUI");
+        String dui = s.next();
+        reserva.setDUI(dui);
+        System.out.println("Habitacion");
+        int numHabitacion = s.nextInt();
+        reserva.setNumHabi(numHabitacion);
+        System.out.println("Precio total");
+        float preciototal = s.nextFloat();
+        reserva.setPrecio(preciototal);
+        System.out.println("Paquete elegido");
+        String pack=s.next();
+        reserva.setPack(pack);
+        System.out.println("Fecha de Ingreso(yy-mm-dd)");
+        String fechaIng=s.next();
+        reserva.setFechaIng(fechaIng);
+        System.out.println("Fecha de salida(yy-mm-dd)");
+        String fechaSal=s.next();
+        reserva.setFechaSal(fechaSal);
+        Reservaciones.set((modificar-1), reserva);
         
     }
     

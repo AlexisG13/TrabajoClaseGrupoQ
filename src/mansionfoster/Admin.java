@@ -141,7 +141,7 @@ public class Admin {
                                         ListaPaquetes.VerServicios();
                                         break;
                                     case 6:
-                                        System.out.println("    Regresando al menu");
+                                        System.out.println("    Regresando al sistema administrativo");
                                         break;
                                     default:
                                         System.err.println("    Ingresa una opción valida");
@@ -152,6 +152,7 @@ public class Admin {
                                 pepe.nextLine();
                             }
                         }
+                        break;
                     case 5:
                         System.out.println("Digite el número de pisos que desea agregar: ");
                         Scanner numPisoss = new Scanner(System.in);

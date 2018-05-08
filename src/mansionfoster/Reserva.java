@@ -68,7 +68,7 @@ public class Reserva {
     public static int aux = 0;
     
 
-    public static void reservar() {
+    public void reservar() {
         int numHabitacion;
         float preciototal=0;
         String pack;
@@ -137,7 +137,7 @@ public class Reserva {
         Piso.cambiarEstadoHabitacionaux();
     }
 
-    public static boolean VerificarFecha(LocalDate d1, LocalDate d2) {
+    public boolean VerificarFecha(LocalDate d1, LocalDate d2) {
         long dias = ChronoUnit.DAYS.between(d1, d2);
         if (dias > 7) {
             return false;
@@ -147,7 +147,7 @@ public class Reserva {
 
     }
     
-    public static void MostrarReservas(){
+    public void MostrarReservas(){
         try{
             System.out.println("Elija el cliente(número)");
         int i=1;
@@ -168,7 +168,7 @@ public class Reserva {
     }
     }
     
-    public static void BorrarReserva(){
+    public  void BorrarReserva(){
         System.out.println("Elija el cliente(número)");
         int i=1;
         for(Reserva p : Reservaciones){
@@ -182,7 +182,7 @@ public class Reserva {
         System.out.println("Reserva cancelada");
     }
     
-    public static void ModificarReserva(){
+    public  void ModificarReserva(){
         System.out.println("Elija el cliente(número)");
         int i=1;
         for(Reserva p : Reservaciones){

@@ -46,6 +46,7 @@ public class Default {
                         Reserva.BorrarReserva();
                         break;
                     case 4: //Modificar reserva
+                        Reserva.ModificarReserva();
                         break;
                     case 5:
                         System.out.println("    Saliendo del Sistema Default");

@@ -29,14 +29,28 @@ public class Piso {
         char p = 65;
         for (int j = 1; j < nPisos + 1; j++) {
             //System.out.println("Piso: " + j);
-            for (int i = 0; i < 10; i++) {
-                if (i % 2 == 0) {
-                    piso.add(new Habitacion(p, i + 1, 120, true));
-                    //System.out.println("Habitacion doble #"+i);
+            if (j < nPisos - 1) {
+                for (int i = 0; i < 10; i++) {
+                    if (i % 2 == 0) {
+                        piso.add(new Habitacion(p, i + 1, 120, true));
+                        //System.out.println("Habitacion doble #"+i);
+                    }
+                    if (i % 2 != 0) {
+                        piso.add(new Habitacion(p, i + 1, 100, true));
+                        //System.out.println("Habitacion sencilla #"+i);
+                    }
                 }
-                if (i % 2 != 0) {
-                    piso.add(new Habitacion(p, i + 1, 100, true));
-                    //System.out.println("Habitacion sencilla #"+i);
+            }
+            if (j >= nPisos - 1) {
+                for (int i = 0; i < 10; i++) {
+                    if (i % 2 == 0) {
+                        piso.add(new Habitacion(p, i + 1, (float) (120*1.1), true));
+                        //System.out.println("Habitacion doble #"+i);
+                    }
+                    if (i % 2 != 0) {
+                        piso.add(new Habitacion(p, i + 1, (float) (100*1.1), true));
+                        //System.out.println("Habitacion sencilla #"+i);
+                    }
                 }
             }
             p += 1;

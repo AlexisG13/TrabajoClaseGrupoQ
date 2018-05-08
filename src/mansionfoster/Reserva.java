@@ -12,7 +12,7 @@ import static mansionfoster.ListaPaquetes.preciousar;
 import static mansionfoster.Piso.preciousarpi;
 import static mansionfoster.Piso.c;
 import java.util.*;
-
+import java.time.format.DateTimeParseException;
 /**
  *
  * @author andre
@@ -71,6 +71,7 @@ public class Reserva {
         Scanner scan = new Scanner(System.in);
         flag = 0;
         while (flag != 1) {
+            try{
             System.out.println("Ingrese la fecha de entrada (formato mm-dd)");
             String fechaIng = "2018-" + scan.next();
             System.out.println("Ingrese la fecha de salida (formato mm-dd)");
@@ -85,6 +86,9 @@ public class Reserva {
             } else {
                 System.out.println("Excede los dias maximo de hospedaje");
             }
+            }catch (DateTimeParseException e){
+                System.err.println(" Formato de fecha incorrecto");
+                }
         }
         System.out.println(" El costo total de su habitacion sera de:   " + "$" + preciototal);
         Reserva reserva = new Reserva(nombre, DUI, d1, d2, preciototal, numHabitacion);

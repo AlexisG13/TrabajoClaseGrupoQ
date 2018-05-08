@@ -19,13 +19,13 @@ import java.time.format.DateTimeParseException;
  */
 public class Reserva {
 
-    private static int numDias, numHabsARes;
-    public  LocalDate d1;
-    public  LocalDate d2;
+    public String FechaIng,FechaSal;  
     public  int numHabi;
     public  String pack;
     public  String nombre;
     public  String DUI;
+    public float precio;
+    public int numHabitacion;
     public static ArrayList<Reserva> Reservaciones = new ArrayList<>();
     public Reserva() {
     }
@@ -42,22 +42,37 @@ public class Reserva {
         this.numHabitacion = numHabitacion;
     }
     
-    public void setPrecio(float preciototal){
-        this.preciototal=preciototal;
+    public void setPrecio(float precio){
+        this.precio=precio;
     }
-    ;
+    
+    public void setPack(String pack){
+        this.pack=pack;
+    }
+    public void setFechaIng(String FechaIng){
+        this.FechaIng=FechaIng;
+    }
+    public void setFechaSal(String FechaSal){
+        this.FechaSal=FechaSal;
+    }
+    
       @Override
     public String toString() {
         return "Cliente " + nombre + " DUI " + DUI+ ", Pack "+ pack + ", Numero de Habitacion  "+numHabitacion;
     }
     public static int saltin = 0;
     public static int flag = 0;
-    static float preciototal = 0;
+    
     public static char c = 65;
     public static int aux = 0;
-    public static int numHabitacion = 0;
+    
 
     public static void reservar() {
+        int numHabitacion;
+        float preciototal=0;
+        String pack;
+        String fechaIng = null;
+        String fechaSal = null;
         Scanner nomb = new Scanner(System.in);
         System.out.println("Ingrese su nombre");
         String nombre = nomb.next();
@@ -75,7 +90,7 @@ public class Reserva {
         Scanner pipo = new Scanner(System.in);
         do {
             System.out.println("Que paquete desea");
-            String pack = pipo.nextLine();
+            pack = pipo.nextLine();
             ListaPaquetes.obtenerPrecioPack(pack);
         } while (preciousar == 0);
         saltin = saltin + preciousar;
@@ -89,9 +104,9 @@ public class Reserva {
         while (flag != 1) {
             try{
             System.out.println("Ingrese la fecha de entrada (formato mm-dd)");
-            String fechaIng = "2018-" + scan.next();
+            fechaIng = "2018-" + scan.next();
             System.out.println("Ingrese la fecha de salida (formato mm-dd)");
-            String fechaSal = "2018-" + scan.next();
+            fechaSal = "2018-" + scan.next();
             LocalDate d1 = LocalDate.parse(fechaIng);
             LocalDate d2 = LocalDate.parse(fechaSal);
             if (VerificarFecha(d1, d2) == true) {
@@ -113,10 +128,12 @@ public class Reserva {
         reserva.setDUI(DUI);
         reserva.setNumHabi(numHabitacion);
         reserva.setPrecio(preciototal);
-        Reservaciones.add(reserva);
+        reserva.setPack(pack);
+        reserva.setFechaIng(fechaIng);
+        reserva.setFechaSal(fechaSal);
         System.out.println("Para confirmar su reserva vuela a introducir  su numero de habitacion: ");
+        Reservaciones.add(reserva);
         Piso.cambiarEstadoHabitacionaux();
-        //ListaReservas.mostrarRes();
     }
 
     public static boolean VerificarFecha(LocalDate d1, LocalDate d2) {
@@ -141,14 +158,9 @@ public class Reserva {
         System.out.println("Cliente: "+Reservaciones.get(p-1).nombre);
         System.out.println("DUI: "+Reservaciones.get(p-1).DUI);
         System.out.println("Habitacion: "+Reservaciones.get(p-1).numHabitacion);
-        System.out.println("Fecha de entrada: "+Reservaciones.get(p-1).d1);
-        System.out.println("Fecha de salida: "+Reservaciones.get(p-1).d2);
-        System.out.println("Consumo: $"+Reservaciones.get(p-1).preciototal);
+        System.out.println("Fecha de entrada: "+Reservaciones.get(p-1).FechaIng);
+        System.out.println("Fecha de salida: "+Reservaciones.get(p-1).FechaSal);
+        System.out.println("Consumo: $"+Reservaciones.get(p-1).precio);
     }
-/*
-    @Override
-    public String toString() {
-        return (nombre);
-    }
-*/
+
 }

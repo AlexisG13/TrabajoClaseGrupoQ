@@ -90,7 +90,8 @@ public class Reserva {
         numHabitacion = habi + z;
         Scanner pipo = new Scanner(System.in);
         do {
-            System.out.println("Que paquete desea");
+            System.out.println("¿Que paquete desea?\nEscriba solamente el nombre por ejemplo: basico");
+            ListaPaquetes.MostrarPacks();
             pack = pipo.nextLine();
             ListaPaquetes.obtenerPrecioPack(pack);
         } while (preciousar == 0);

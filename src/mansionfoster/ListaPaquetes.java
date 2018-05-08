@@ -17,7 +17,7 @@ public class ListaPaquetes {
     public static int preciousar;
     public static void IniciarPacks(){
         Packs.add(new Paquete("Premium",true,true,true,true,true,150));
-        Packs.add(new Paquete("Básico",false,true,false,false,true,10));
+        Packs.add(new Paquete("Basico",false,true,false,false,true,10));
     }
     public static void MostrarPacks(){
         int i=1;

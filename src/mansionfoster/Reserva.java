@@ -10,59 +10,36 @@ import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 import static mansionfoster.ListaPaquetes.preciousar;
 import static mansionfoster.Piso.preciousarpi;
+import java.util.*;
 
 /**
  *
  * @author andre
  */
 public class Reserva {
-    private int numDias, numHabsARes;
+    private static int numDias, numHabsARes;
     public static LocalDate d1;
     public static LocalDate d2;
     public static int numHabi;
     public static String pack;
+    public static String nombre;
+    public static String DUI;
 
-    public Reserva(String nombre, int DUI, LocalDate d1, LocalDate d2,
-    float preciototal,int numHabi) {
-        this.numDias = numDias;
-        this.numHabsARes = numHabsARes;
-    }
-
-    public int getNumDias() {
-        return numDias;
-    }
-
-    public int getNumHabsARes() {
-        return numHabsARes;
-    }
-
-    public void setNumDias(int numDias) {
-        this.numDias = numDias;
-    }
-
-    public void setNumHabsARes(int numHabsARes) {
-        this.numHabsARes = numHabsARes;
-    }
-    
+    public Reserva(String nombre, String DUI, LocalDate d1, LocalDate d2,
+    float preciototal,int numHabi){};
     public static int saltin=0;
     public static int flag =0;
     static float preciototal=0;
-    
-        
+   
     public static void reservar() {
         System.out.println("Que habitacion quiere (Se ingresa el piso deseado y luego el numero de habitacion)");
         Scanner sc = new Scanner(System.in);
         numHabi = sc.nextInt();
         Scanner pipo = new Scanner(System.in);
-        System.out.println("Que paquete quiere");
-        pack = pipo.nextLine();
-       ListaPaquetes.obtenerPrecioPack(pack);
-       while(ListaPaquetes.obtenerPrecioPack(pack)==0){
-           System.out.println("Que paquete quiere");
-           Scanner donko = new Scanner(System.in);
-            pack = donko.nextLine();
-           ListaPaquetes.obtenerPrecioPack(pack);
-       }
+       do{System.out.println("Que paquete desea");
+           pack = pipo.nextLine();
+           ListaPaquetes.obtenerPrecioPack(pack); 
+       }while(preciousar==0);
        saltin=saltin+preciousar;
         //System.out.println(saltin);    
         Piso.obtenerPrecio(numHabi);
@@ -101,6 +78,10 @@ public class Reserva {
             return true;
         }
         
+    }
+    @Override
+    public String toString(){
+        return nombre+DUI+d1+d2+preciototal+numHabi;
     }
 
 }

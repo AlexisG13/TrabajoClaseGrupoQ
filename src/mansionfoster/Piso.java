@@ -17,6 +17,9 @@ public class Piso {
     public static int nPisos = 0;
     public static ArrayList<Habitacion> piso = new ArrayList<>();
     public static float preciousarpi = 0;
+    public static char c = 65;
+    public static int aux=0;
+    public static int numHabitacion=0;
 
     public Piso() {
 
@@ -111,24 +114,39 @@ public class Piso {
     public static void cambiarPrecioHabitacion() {
         System.out.println("Que habitacion quiere");
         Scanner sc = new Scanner(System.in);
-        int numHabi = sc.nextInt();
+        Scanner reader = new Scanner(System.in);
+        int z=0;
+        c = reader.next().charAt(0);
+        int habi=0;
+        z= (c-64)*10;
+        habi=sc.nextInt();
+        numHabitacion=habi+z;
         System.out.println("Cual es el nuevo valor");
         int nuevoValor = sc.nextInt();
-        piso.get(numHabi - 1).setCostoNoche(nuevoValor);
+        piso.get(numHabitacion - 1).setCostoNoche(nuevoValor);
 
     }
 
     public static void cambiarEstadoHabitacion() {
-        System.out.println("Que habitacion quiere");
+        System.out.println("Que habitacion quiere ingrese el piso primero y luego la habitacion: ");
         Scanner sc = new Scanner(System.in);
-        int numHab = sc.nextInt();
+         Scanner reader = new Scanner(System.in);
+        c = reader.next().charAt(0);
         int estado = 0;
+        int z=0;
+        int habi=0;
+        z= (c-64)*10;
+        
+        habi=sc.nextInt();
+        aux=habi+z;
+        System.out.println(aux);
+        
         System.out.println("Estado habilitado 1, deshablitado 0");
         estado = sc.nextInt();
         if (estado == 1) {
-            piso.get(numHab - 11).setEstado(true);
+            piso.get(aux - 11).setEstado(true);
         } else {
-            piso.get(numHab - 11).setEstado(false);
+            piso.get(aux - 11).setEstado(false);
         }
     }
 
@@ -145,7 +163,7 @@ public class Piso {
         Scanner sc = new Scanner(System.in);
         int numHab = sc.nextInt();
         int estado = 0;
-        //System.out.println("Estado habilitado 1, deshablitado 0");
+        
         if (estado == 0) {
             piso.get(numHab - 11).setEstado(false);
             System.out.println("Reserva confirmada");

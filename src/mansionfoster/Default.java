@@ -43,6 +43,7 @@ public class Default {
                        Reserva.reservar();
                         break;
                     case 3: //Cancelar reserva
+                        Reserva.BorrarReserva();
                         break;
                     case 4: //Modificar reserva
                         break;

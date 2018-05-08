@@ -13,6 +13,7 @@ import static mansionfoster.Piso.preciousarpi;
 import static mansionfoster.Piso.c;
 import java.util.*;
 import java.time.format.DateTimeParseException;
+import java.lang.IndexOutOfBoundsException;
 /**
  *
  * @author andre
@@ -147,7 +148,8 @@ public class Reserva {
     }
     
     public static void MostrarReservas(){
-        System.out.println("Elija el cliente(número)");
+        try{
+            System.out.println("Elija el cliente(número)");
         int i=1;
         for(Reserva p : Reservaciones){
             System.out.println(i+"- "+p);
@@ -161,6 +163,39 @@ public class Reserva {
         System.out.println("Fecha de entrada: "+Reservaciones.get(p-1).FechaIng);
         System.out.println("Fecha de salida: "+Reservaciones.get(p-1).FechaSal);
         System.out.println("Consumo: $"+Reservaciones.get(p-1).precio);
+    }catch(IndexOutOfBoundsException e){
+        System.err.println("Aun no se han realizado reservas");
     }
-
+    }
+    
+    public static void BorrarReserva(){
+        System.out.println("Elija el cliente(número)");
+        int i=1;
+        for(Reserva p : Reservaciones){
+            
+            System.out.println(i+"- "+p);
+            i++;
+        }
+        Scanner s = new Scanner(System.in);
+        int borrar = s.nextInt();
+        Reservaciones.remove(borrar-1);
+        System.out.println("Reserva cancelada");
+    }
+    
+    public static void ModificarReserva(){
+        System.out.println("Elija el cliente(número)");
+        int i=1;
+        for(Reserva p : Reservaciones){
+            
+            System.out.println(i+"- "+p);
+            i++;
+        }
+        Scanner s = new Scanner(System.in);
+        int modificar = s.nextInt();
+        System.out.println("Nombre del cliente");
+        String o = s.next();
+        Reservaciones.set((modificar-1), new Reserva());
+        
+    }
+    
 }

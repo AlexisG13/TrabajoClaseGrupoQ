@@ -46,7 +46,7 @@ public class MansionFoster {
                         System.out.println("    Que tenga un buen día..");
                         break;
                     default:
-                        System.out.println("    Por favor ingrese una opción valida");
+                        System.err.println("    Por favor ingrese una opción valida");
                 }
             } catch (InputMismatchException e) {
                 System.err.println("    Por favor, ingrese un número");

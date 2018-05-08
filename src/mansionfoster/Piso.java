@@ -81,6 +81,9 @@ public class Piso {
         }
     }
 
+    /**
+     * Función que se encarga de habilitar o deshabilitar pisos completos
+     */
     public static void cambiaEstadoPisos() {
         int estado = 0;
         Scanner sc = new Scanner(System.in);
@@ -90,12 +93,12 @@ public class Piso {
             System.out.println("Ingrese el piso(formato ABC): ");
             Scanner ch = new Scanner(System.in);
             char pisos = ch.next().charAt(0);
-            System.out.println("Estado: habilitado: 1, deshablitado: 0");
+            System.out.println("Estado: 1. Habilitado, 0. Deshablitado");
             estado = sc.nextInt();
 
             while (estado != 1 && estado != 0) {
                 System.err.println("Ingrese 1 o 0");
-                System.out.println("Estado: habilitado: 1, deshablitado: 0");
+                System.out.println("Estado: 1. Habilitado , 0. Deshablitado");
                 estado = sc.nextInt();
             }
 
@@ -120,8 +123,11 @@ public class Piso {
 
     }
 
+    /**
+     * Función que modifica el precio de una sola habitacion 
+     */
     public static void cambiarPrecioHabitacion() {
-        System.out.println("Que habitacion quiere");
+        System.out.println("¿Qué habitación quiere?");
         Scanner sc = new Scanner(System.in);
         Scanner reader = new Scanner(System.in);
         int z = 0;
@@ -130,14 +136,14 @@ public class Piso {
         z = (c - 64) * 10;
         habi = sc.nextInt();
         numHabitacion = habi + z;
-        System.out.println("Cual es el nuevo valor");
+        System.out.println("¿Cúal es el nuevo valor?");
         int nuevoValor = sc.nextInt();
         piso.get(numHabitacion - 1).setCostoNoche(nuevoValor);
 
     }
 
     public static void cambiarEstadoHabitacion() {
-        System.out.println("Que habitacion quiere ingrese el piso primero y luego la habitacion: ");
+        System.out.println("¿Qué habitación quiere? Ingrese el piso primero y luego el número de la habitación ");
         Scanner sc = new Scanner(System.in);
         Scanner reader = new Scanner(System.in);
         c = reader.next().charAt(0);
@@ -147,11 +153,11 @@ public class Piso {
         z = (c - 64) * 10;
         habi = sc.nextInt();
         aux = habi + z;
-        System.out.println("Estado habilitado 1, deshablitado 0");
+        System.out.println("Estado: 1. Habilitado , 0. Deshablitado");
         estado = sc.nextInt();
         while (estado != 1 && estado != 0) {
             System.err.println("Ingrese 1 o 0");
-            System.out.println("Estado: habilitado: 1, deshablitado: 0");
+            System.out.println("Estado: 1. Habilitado , 0. Deshablitado");
             estado = sc.nextInt();
         }
         if (estado == 1) {
@@ -181,7 +187,7 @@ public class Piso {
         int z = 0;
         int habi = 0;
         z = (c - 64) * 10;
-        System.out.println("Numero de habitacion: ");
+        System.out.println("Número de habitación: ");
         habi = sc.nextInt();
         aux = habi + z;
         if (estadoaux == 0) {

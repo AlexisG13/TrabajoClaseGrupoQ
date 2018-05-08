@@ -133,7 +133,7 @@ public class Reserva {
         reserva.setPack(pack);
         reserva.setFechaIng(fechaIng);
         reserva.setFechaSal(fechaSal);
-        System.out.println("Para confirmar su reserva vuela a introducir  su numero de habitacion: ");
+        System.out.println("Para confirmar su reserva: ");
         Reservaciones.add(reserva);
         Piso.cambiarEstadoHabitacionaux();
     }

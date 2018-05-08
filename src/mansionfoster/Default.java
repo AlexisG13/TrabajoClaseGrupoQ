@@ -29,6 +29,7 @@ public class Default {
 
     public void Menu() {
         int opcion = 6;
+        Reserva reserva = new Reserva();
         Scanner leer = new Scanner(System.in);
         Piso.AgregaPiso();
         while (opcion != 5) {
@@ -37,16 +38,16 @@ public class Default {
                 opcion = leer.nextInt();
                 switch (opcion) {
                     case 1: //Ver reservas
-                        Reserva.MostrarReservas();
+                        reserva.MostrarReservas();
                         break;
                     case 2: //Agregar reserva
-                       Reserva.reservar();
+                       reserva.reservar();
                         break;
                     case 3: //Cancelar reserva
-                        Reserva.BorrarReserva();
+                        reserva.BorrarReserva();
                         break;
                     case 4: //Modificar reserva
-                        Reserva.ModificarReserva();
+                        reserva.ModificarReserva();
                         break;
                     case 5:
                         System.out.println("    Saliendo del Sistema Default");

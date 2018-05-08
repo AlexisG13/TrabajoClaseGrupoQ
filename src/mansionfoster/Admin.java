@@ -19,7 +19,6 @@ public class Admin {
     private String pass;
 
     public Admin() {
-
     }
 
     public Admin(String username) {
@@ -42,6 +41,9 @@ public class Admin {
         this.password = password;
     }
 
+    /**
+     * Funcion login que se encarga de pedir la contraseña a Rafael
+     */
     public void login() {
         System.out.println("    Iniciar Sistema Administrativo");
         System.out.println("Username: " + username);
@@ -59,6 +61,9 @@ public class Admin {
         Menu();
     }
 
+    /**
+     * Listado de las opciones del sistema administrativo 
+     */
     public void opciones() {
         System.out.println("---- SISTEMA ADMINISTRATIVO ----");
         System.out.println("1. Deshabilitar / Habilitar Habitaciones");
@@ -70,17 +75,25 @@ public class Admin {
         System.out.print(": ");
     }
 
+    /**
+     * Listado de las opciones del menu de paquetes
+     */
     public void menuPaquetes() {
-        System.out.println("¿Que desea realizar?");
+        System.out.println("--MENÚ PAQUETES--");
+        System.out.println("¿Qué desea realizar?");
         System.out.println("1. Ver paquetes");
         System.out.println("2. Agregar paquete");
         System.out.println("3. Borrar paquete");
         System.out.println("4. Modificar paquete");
         System.out.println("5. Ver servicios del paquete");
-        System.out.println("6. Regresar al menu");
+        System.out.println("6. Regresar al sistema administrativo");
         System.out.print(": ");
     }
 
+    /**
+     * Funcion que se encarga de mandar a llamar las demás funciones
+     * que tendra el sistema administrativo 
+     */
     public void Menu() {
         //Piso habitacion = new Piso();
         ListaPaquetes Packs = new ListaPaquetes();
@@ -123,16 +136,15 @@ public class Admin {
                                         break;
                                     case 4:
                                         ListaPaquetes.ModificarPack();
-
-                                        break;
-                                    case 6:
-                                        System.out.println("    Regresando al menu");
                                         break;
                                     case 5:
                                         ListaPaquetes.VerServicios();
                                         break;
+                                    case 6:
+                                        System.out.println("    Regresando al menu");
+                                        break;
                                     default:
-                                        System.out.println("    Ingresa una opción valida");
+                                        System.err.println("    Ingresa una opción valida");
                                         break;
                                 }
                             } catch (InputMismatchException e) {
@@ -141,7 +153,7 @@ public class Admin {
                             }
                         }
                     case 5:
-                        System.out.println("Digite el numero de pisos que desea agregar ");
+                        System.out.println("Digite el número de pisos que desea agregar: ");
                         Scanner numPisoss = new Scanner(System.in);
                         Piso.nPisos = numPisoss.nextInt();
                         Piso.AgregaPiso();
@@ -152,7 +164,7 @@ public class Admin {
                         System.out.println("    Saliendo del Sistema Administrativo");
                         break;
                     default:
-                        System.out.println("    Por favor ingrese una opción valida");
+                        System.err.println("    Por favor ingrese una opción valida");
                 }
             } catch (InputMismatchException e) {
                 System.err.println("    Por favor, ingrese un número");
@@ -160,5 +172,4 @@ public class Admin {
             }
         }
     }
-
 }

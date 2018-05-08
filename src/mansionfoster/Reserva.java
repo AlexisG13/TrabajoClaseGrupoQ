@@ -83,7 +83,7 @@ public class Reserva {
         System.out.println("Ingrese su DUI");
         String DUI = nomb.next();
         while (DUI.length() != 9) {
-            System.err.println("Ingresa tu DUI de 9 digitos ");
+            System.err.println("¡Ingresa tu DUI de 9 digitos!");
             System.out.println("Ingrese su DUI");
             DUI = nomb.next();
         }

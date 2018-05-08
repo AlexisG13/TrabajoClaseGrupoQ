@@ -31,6 +31,10 @@ public class Reserva {
             float preciototal, int numHabi) {
     }
     ;
+      @Override
+    public String toString() {
+        return "Cliente " + nombre + " DUI " + DUI+ ", Pack "+ pack + ", Numero de Habitacion  "+numHabitacion;
+    }
     public static int saltin = 0;
     public static int flag = 0;
     static float preciototal = 0;
@@ -44,7 +48,7 @@ public class Reserva {
         nombre = nomb.next();
         System.out.println("Ingrese su DUI");
         DUI = nomb.next();
-        System.out.println("Que habitacion quiere (Se ingresa el piso deseado y luego el numero de habitacion)");
+        System.out.println("Que habitacion quiere (Se ingresa el piso (ABC...) deseado y luego el numero de habitacion): ");
         Scanner sc = new Scanner(System.in);
         Scanner reader = new Scanner(System.in);
         int z = 0;
@@ -65,6 +69,7 @@ public class Reserva {
         float aux = (float) saltin;
         aux = preciousarpi + aux;
         Scanner scan = new Scanner(System.in);
+        flag = 0;
         while (flag != 1) {
             System.out.println("Ingrese la fecha de entrada (formato mm-dd)");
             String fechaIng = "2018-" + scan.next();
@@ -84,9 +89,9 @@ public class Reserva {
         System.out.println(" El costo total de su habitacion sera de:   " + "$" + preciototal);
         Reserva reserva = new Reserva(nombre, DUI, d1, d2, preciototal, numHabitacion);
         ListaReservas.AgregarReservas(reserva);
-        System.out.println("Para confirmar su reserva vuela a introducir su numero de habitacion: ");
+        System.out.println("Para confirmar su reserva vuela a introducir  su numero de habitacion: ");
         Piso.cambiarEstadoHabitacionaux();
-
+        ListaReservas.mostrarRes();
     }
 
     public static boolean VerificarFecha(LocalDate d1, LocalDate d2) {
@@ -98,10 +103,10 @@ public class Reserva {
         }
 
     }
-
+/*
     @Override
     public String toString() {
         return (nombre);
     }
-
+*/
 }

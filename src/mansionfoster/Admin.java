@@ -75,7 +75,7 @@ public class Admin {
         System.out.println("1. Ver paquetes");
         System.out.println("2. Agregar paquete");
         System.out.println("3. Borrar paquete");
-        System.out.println("4. Modificar nombre");
+        System.out.println("4. Modificar paquete");
         System.out.println("5. Ver servicios del paquete");
         System.out.println("6. Regresar al menu");
         System.out.print(": ");
@@ -133,6 +133,7 @@ public class Admin {
                                         break;
                                     default:
                                         System.out.println("    Ingresa una opción valida");
+                                        break;
                                 }
                             } catch (InputMismatchException e) {
                                 System.err.println("    Por favor, ingrese un número");
@@ -146,6 +147,7 @@ public class Admin {
                         Piso.AgregaPiso();
                         System.out.println("--- SE AGREGARON EL NUMERO DE PISOS ---");
                         Piso.mostrar();
+                        break;
                     case 6:
                         System.out.println("    Saliendo del Sistema Administrativo");
                         break;

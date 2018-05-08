@@ -37,6 +37,11 @@ public class Reserva {
     
    
     public static void reservar() {
+        Scanner nomb = new Scanner(System.in);
+        System.out.println("Ingrese su nombre");
+        nombre = nomb.next();
+        System.out.println("Ingrese su DUI");
+        DUI = nomb.next();
         System.out.println("Que habitacion quiere (Se ingresa el piso deseado y luego el numero de habitacion)");
         Scanner sc = new Scanner(System.in);
               Scanner reader = new Scanner(System.in);
@@ -74,9 +79,10 @@ public class Reserva {
                 }
         }
         System.out.println(" El costo total de su habitacion sera de:   "+"$"+preciototal);
-        
-        System.out.println("Para confirmar su reserva vuela a introducir su numero de habitacion: ");
-        Piso.cambiarEstadoHabitacionaux();
+        Reserva reserva = new Reserva(nombre,DUI,d1,d2,preciototal,numHabitacion);
+        ListaReservas.AgregarReservas(reserva);
+        //System.out.println("Para confirmar su reserva vuela a introducir su numero de habitacion: ");
+        //Piso.cambiarEstadoHabitacionaux();
 
     }
     
@@ -92,7 +98,7 @@ public class Reserva {
     }
     @Override
     public String toString(){
-        return nombre+DUI+d1+d2+preciototal+numHabi;
+        return(nombre);
     }
 
 }

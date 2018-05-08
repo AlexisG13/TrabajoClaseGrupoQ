@@ -18,8 +18,8 @@ public class Piso {
     public static ArrayList<Habitacion> piso = new ArrayList<>();
     public static float preciousarpi = 0;
     public static char c = 65;
-    public static int aux=0;
-    public static int numHabitacion=0;
+    public static int aux = 0;
+    public static int numHabitacion = 0;
 
     public Piso() {
 
@@ -47,11 +47,11 @@ public class Piso {
             if (j >= nPisos - 1) {
                 for (int i = 0; i < 10; i++) {
                     if (i % 2 == 0) {
-                        piso.add(new Habitacion(p, i + 1, (float) (120*1.1), true));
+                        piso.add(new Habitacion(p, i + 1, (float) (120 * 1.1), true));
                         //System.out.println("Habitacion doble #"+i);
                     }
                     if (i % 2 != 0) {
-                        piso.add(new Habitacion(p, i + 1, (float) (100*1.1), true));
+                        piso.add(new Habitacion(p, i + 1, (float) (100 * 1.1), true));
                         //System.out.println("Habitacion sencilla #"+i);
                     }
                 }
@@ -76,7 +76,6 @@ public class Piso {
             cont++;
         }
     }
-//Habitacion(char letraPiso, int numHab,float costoNoche, boolean estado)
 
     public static void cambiaEstadoPisos() {
         int estado = 0;
@@ -115,12 +114,12 @@ public class Piso {
         System.out.println("Que habitacion quiere");
         Scanner sc = new Scanner(System.in);
         Scanner reader = new Scanner(System.in);
-        int z=0;
+        int z = 0;
         c = reader.next().charAt(0);
-        int habi=0;
-        z= (c-64)*10;
-        habi=sc.nextInt();
-        numHabitacion=habi+z;
+        int habi = 0;
+        z = (c - 64) * 10;
+        habi = sc.nextInt();
+        numHabitacion = habi + z;
         System.out.println("Cual es el nuevo valor");
         int nuevoValor = sc.nextInt();
         piso.get(numHabitacion - 1).setCostoNoche(nuevoValor);
@@ -130,17 +129,14 @@ public class Piso {
     public static void cambiarEstadoHabitacion() {
         System.out.println("Que habitacion quiere ingrese el piso primero y luego la habitacion: ");
         Scanner sc = new Scanner(System.in);
-         Scanner reader = new Scanner(System.in);
+        Scanner reader = new Scanner(System.in);
         c = reader.next().charAt(0);
         int estado = 0;
-        int z=0;
-        int habi=0;
-        z= (c-64)*10;
-        
-        habi=sc.nextInt();
-        aux=habi+z;
-        System.out.println(aux);
-        
+        int z = 0;
+        int habi = 0;
+        z = (c - 64) * 10;
+        habi = sc.nextInt();
+        aux = habi + z;
         System.out.println("Estado habilitado 1, deshablitado 0");
         estado = sc.nextInt();
         if (estado == 1) {
@@ -163,9 +159,16 @@ public class Piso {
         Scanner sc = new Scanner(System.in);
         int numHab = sc.nextInt();
         int estado = 0;
-        
-        if (estado == 0) {
-            piso.get(numHab - 11).setEstado(false);
+        Scanner reader = new Scanner(System.in);
+        c = reader.next().charAt(0);
+        int estadoaux = 0;
+        int z = 0;
+        int habi = 0;
+        z = (c - 64) * 10;
+        habi = sc.nextInt();
+        aux = habi + z;
+        if (estadoaux == 0) {
+            piso.get(aux - 11).setEstado(false);
             System.out.println("Reserva confirmada");
         }
     }

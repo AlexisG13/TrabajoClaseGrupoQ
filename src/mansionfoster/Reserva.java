@@ -10,44 +10,27 @@ import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 import static mansionfoster.ListaPaquetes.preciousar;
 import static mansionfoster.Piso.preciousarpi;
+import java.util.*;
 
 /**
  *
  * @author andre
  */
 public class Reserva {
-    private int numDias, numHabsARes;
+    private static int numDias, numHabsARes;
     public static LocalDate d1;
     public static LocalDate d2;
     public static int numHabi;
     public static String pack;
+    public static String nombre;
+    public static String DUI;
 
-    public Reserva(String nombre, int DUI, LocalDate d1, LocalDate d2,
-    float preciototal,int numHabi) {
-               
-    }
-
-    public int getNumDias() {
-        return numDias;
-    }
-
-    public int getNumHabsARes() {
-        return numHabsARes;
-    }
-
-    public void setNumDias(int numDias) {
-        this.numDias = numDias;
-    }
-
-    public void setNumHabsARes(int numHabsARes) {
-        this.numHabsARes = numHabsARes;
-    }
-    
+    public Reserva(String nombre, String DUI, LocalDate d1, LocalDate d2,
+    float preciototal,int numHabi){};
     public static int saltin=0;
     public static int flag =0;
     static float preciototal=0;
-    
-        
+   
     public static void reservar() {
         System.out.println("Que habitacion quiere (Se ingresa el piso deseado y luego el numero de habitacion)");
         Scanner sc = new Scanner(System.in);
@@ -95,6 +78,10 @@ public class Reserva {
             return true;
         }
         
+    }
+    @Override
+    public String toString(){
+        return nombre+DUI+d1+d2+preciototal+numHabi;
     }
 
 }

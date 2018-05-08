@@ -22,12 +22,14 @@ public class Piso {
     public static int numHabitacion = 0;
 
     public Piso() {
-
     }
 
     //public void setHabitacion(ArrayList<Habitacion> habitacion) {
     //  this.piso = piso;
     //}
+    /**
+     * Función que se encarga de añadir un piso más en el hotel
+     */
     public static void AgregaPiso() {
         char p = 65;
         for (int j = 1; j < nPisos + 1; j++) {
@@ -60,13 +62,15 @@ public class Piso {
         }
     }
 
+    /**
+     * Función que muestra cada uno de los pisos
+     */
     public static void mostrar() {
         int numeroPiso = 1;
         int cont = 1;
         for (Habitacion e : piso) {
             if (cont == 10) {
                 cont -= 10;
-
             }
             if (cont == 1) {
                 System.out.println("-----------Piso #" + numeroPiso + "------------");
@@ -88,6 +92,12 @@ public class Piso {
             char pisos = ch.next().charAt(0);
             System.out.println("Estado: habilitado: 1, deshablitado: 0");
             estado = sc.nextInt();
+
+            while (estado != 1 && estado != 0) {
+                System.err.println("Ingrese 1 o 0");
+                System.out.println("Estado: habilitado: 1, deshablitado: 0");
+                estado = sc.nextInt();
+            }
 
             for (Habitacion e : piso) {
                 if (e.getLetraPiso() == pisos) {
@@ -139,6 +149,11 @@ public class Piso {
         aux = habi + z;
         System.out.println("Estado habilitado 1, deshablitado 0");
         estado = sc.nextInt();
+        while (estado != 1 && estado != 0) {
+            System.err.println("Ingrese 1 o 0");
+            System.out.println("Estado: habilitado: 1, deshablitado: 0");
+            estado = sc.nextInt();
+        }
         if (estado == 1) {
             piso.get(aux - 11).setEstado(true);
         } else {
